@@ -5,3 +5,6 @@ _site/
 vendor/
 .DS_Store
 .bundle/
+
+# Local Netlify folder
+.netlify

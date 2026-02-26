@@ -24,18 +24,21 @@ collections:
 
   - name: "events"
     label: "Events"
-    file: "_data/events.yml"
     description: "Upcoming events list"
-    fields:
+    files:
       - label: "Events"
-        name: "items"
-        widget: "list"
+        name: "events"
+        file: "_data/events.yml"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Date & Time", name: "date", widget: "datetime" }
-          - { label: "Location", name: "location", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - { label: "RSVP Link", name: "link", widget: "string", required: false }
+          - label: "Events"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date & Time", name: "date", widget: "datetime" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "RSVP Link", name: "link", widget: "string", required: false }
 
   - name: "pages"
     label: "Pages"
