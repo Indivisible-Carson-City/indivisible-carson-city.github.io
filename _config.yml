@@ -2,7 +2,7 @@ title: Indivisible Carson City
 description: >-
   Indivisible Carson City is a local grassroots group working to promote
   progressive values and civic engagement in Carson City, Nevada.
-url: "" # Set to your Netlify URL after deploy (e.g. https://indivisiblecarsoncity.netlify.app)
+url: "https://indivisiblecarsoncity.org"
 baseurl: ""
 
 permalink: /blog/:year/:month/:day/:title/
