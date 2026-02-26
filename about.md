@@ -5,7 +5,7 @@ title: About
 
 ## Who We Are
 
-Indivisible Carson City is a local grassroots group of neighbors and community members working together to promote progressive values, civic engagement, and accountability in Carson City, Nevada.
+Indivisible Carson City is a group of democracy-loving people from Nevada's Capital City region who support each other in civic engagement. We take action to support the principles and practices of democratic government at the local, state, and national levels.
 
 We are part of the national [Indivisible](https://indivisible.org) movement — a grassroots network of thousands of local groups that have come together to resist attacks on our democratic institutions and build a more just society.
 
