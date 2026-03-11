@@ -4,17 +4,17 @@ title: Events
 permalink: /events/
 ---
 
-<section class="py-5">
-  <div class="container">
-    <h1 class="text-center mb-4">Upcoming Events</h1>
+<section class="py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h1 class="font-heading text-4xl font-bold text-center mb-10">Upcoming Events</h1>
     {% if site.data.events.size > 0 %}
-    <div class="row">
+    <div class="grid md:grid-cols-3 gap-6">
       {% for event in site.data.events %}
         {% include event-card.html event=event %}
       {% endfor %}
     </div>
     {% else %}
-    <p class="text-center text-muted">No upcoming events. Check back soon!</p>
+    <p class="text-center text-gray-400">No upcoming events. Check back soon!</p>
     {% endif %}
   </div>
 </section>

@@ -1,118 +1,45 @@
-/* Indivisible Brand Colors */
-:root {
-  --indivisible-blue: #002147;
-  --indivisible-red: #BB133E;
-  --bs-primary: #002147;
-  --bs-primary-rgb: 0, 33, 71;
-}
-
-/* Typography */
-h1, h2, h3, h4, h5, h6,
-.navbar-brand {
-  font-family: 'Roboto Condensed', sans-serif;
-}
-
+/* Base styles and Tailwind prose overrides */
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Navbar */
-.navbar.bg-primary,
-.bg-primary {
-  background-color: var(--indivisible-blue) !important;
+/* Prose styling for markdown content (About page, etc.) */
+.prose h2 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #1f2937;
 }
 
-.navbar-brand {
-  font-size: 1.4rem;
-  letter-spacing: 0.02em;
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: #4b5563;
 }
 
-/* Accent button (Indivisible Red) */
-.btn-accent {
-  background-color: var(--indivisible-red);
-  border-color: var(--indivisible-red);
-  color: #fff;
+.prose ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.btn-accent:hover,
-.btn-accent:focus {
-  background-color: #9a0f33;
-  border-color: #9a0f33;
-  color: #fff;
+.prose li {
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+  color: #4b5563;
 }
 
-/* Primary button overrides */
-.btn-primary {
-  background-color: var(--indivisible-blue);
-  border-color: var(--indivisible-blue);
+.prose a {
+  color: #28B5B5;
+  text-decoration: underline;
 }
 
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: #001a38;
-  border-color: #001a38;
+.prose a:hover {
+  color: #1F9494;
 }
 
-.btn-outline-primary {
-  color: var(--indivisible-blue);
-  border-color: var(--indivisible-blue);
-}
-
-.btn-outline-primary:hover,
-.btn-outline-primary:focus {
-  background-color: var(--indivisible-blue);
-  border-color: var(--indivisible-blue);
-  color: #fff;
-}
-
-/* Hero Section */
-.hero-section {
-  background: linear-gradient(135deg, var(--indivisible-blue) 0%, #003366 100%);
-}
-
-/* Footer */
-.site-footer {
-  background-color: var(--indivisible-blue);
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.site-footer a {
-  color: #fff;
-}
-
-/* Cards */
-.card {
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-2px);
-}
-
-.card-title a {
-  color: var(--indivisible-blue);
-}
-
-.card-title a:hover {
-  color: var(--indivisible-red);
-}
-
-/* Post content */
-.post-content img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Badge overrides */
-.badge.bg-secondary {
-  background-color: var(--indivisible-blue) !important;
-}
-
-/* Links */
-a {
-  color: var(--indivisible-blue);
-}
-
-a:hover {
-  color: var(--indivisible-red);
+.prose strong {
+  color: #1f2937;
 }

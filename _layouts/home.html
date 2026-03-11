@@ -2,38 +2,82 @@
 layout: default
 ---
 
-<section class="hero-section text-white text-center py-5">
-  <div class="container py-5">
-    <h1 class="display-4 fw-bold">Indivisible Carson City</h1>
-    <p class="lead mb-4">Grassroots civic engagement in Carson City, Nevada</p>
-    <a href="#events" class="btn btn-accent btn-lg me-2">Upcoming Events</a>
-    <a href="{{ '/about' | relative_url }}" class="btn btn-outline-light btn-lg">Learn More</a>
+<section class="relative min-h-[500px] flex items-center justify-center text-white text-center bg-cover" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{{ '/assets/images/events/RG72.jpg' | relative_url }}'); background-position: center 80%;">
+  <div class="max-w-3xl mx-auto px-4 py-20">
+    <h1 class="font-heading text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Turn Your Outrage Into Action</h1>
+    <p class="text-xl md:text-2xl mb-8 text-white/90">Grassroots civic engagement in Carson City, Nevada</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="#events" class="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-full font-semibold transition-colors">Upcoming Events</a>
+      <a href="{{ '/about' | relative_url }}" class="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-full font-semibold transition-colors">Learn More</a>
+    </div>
   </div>
 </section>
 
-<section class="py-5 bg-light">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <h2 class="mb-3">Our Mission</h2>
-        <p class="lead">Indivisible Carson City is a group of democracy-loving people from Nevada's Capital City region who support each other in civic engagement. We take action to support the principles and practices of democratic government at the local, state, and national levels.</p>
+<section class="py-16">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <img src="{{ '/assets/images/branding/indivisible_circle_logo.jpg' | relative_url }}" alt="Indivisible Carson City — Stronger Together" class="w-36 h-36 rounded-full mx-auto mb-6 shadow-lg">
+    <h2 class="font-heading text-3xl font-bold mb-4">Who We Are</h2>
+    <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">Indivisible Carson City is a grassroots group of democracy-loving people from Nevada's Capital City region who support each other in civic engagement. We take action to support the principles and practices of democratic government at the local, state, and national levels.</p>
+  </div>
+</section>
+
+<section class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="font-heading text-3xl font-bold text-center mb-10">What We Do</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <img src="{{ '/assets/images/events/RG108.jpg' | relative_url }}" alt="Rally at the Nevada Legislature" class="w-full h-52 object-cover rounded-xl mb-4" loading="lazy">
+        <h3 class="font-heading font-bold text-xl mb-2">Organize &amp; Mobilize</h3>
+        <p class="text-gray-600">We attend and organize town halls, rallies, and community forums to make our voices heard.</p>
+      </div>
+      <div class="text-center">
+        <img src="{{ '/assets/images/events/RG55.jpg' | relative_url }}" alt="Community rally on Carson Street" class="w-full h-52 object-cover rounded-xl mb-4" loading="lazy">
+        <h3 class="font-heading font-bold text-xl mb-2">Register &amp; Vote</h3>
+        <p class="text-gray-600">We register voters and help our neighbors make their voices heard at the ballot box.</p>
+      </div>
+      <div class="text-center">
+        <img src="{{ '/assets/images/events/RG89.jpg' | relative_url }}" alt="We The People Means All of Us" class="w-full h-52 object-cover rounded-xl mb-4" loading="lazy">
+        <h3 class="font-heading font-bold text-xl mb-2">Hold Leaders Accountable</h3>
+        <p class="text-gray-600">We connect with local, state, and federal representatives to demand they work for the people.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="events" class="py-5">
-  <div class="container">
-    <h2 class="text-center mb-4">Upcoming Events</h2>
+<section id="events" class="py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="font-heading text-3xl font-bold text-center mb-10">Upcoming Events</h2>
     {% if site.data.events.size > 0 %}
-    <div class="row">
+    <div class="grid md:grid-cols-3 gap-6">
       {% for event in site.data.events %}
         {% include event-card.html event=event %}
       {% endfor %}
     </div>
     {% else %}
-    <p class="text-center text-muted">No upcoming events. Check back soon!</p>
+    <p class="text-center text-gray-400">No upcoming events. Check back soon!</p>
     {% endif %}
+  </div>
+</section>
+
+<section class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="font-heading text-3xl font-bold text-center mb-10">In Action</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+      <img src="{{ '/assets/images/events/RG136.jpg' | relative_url }}" alt="Megaphone at the Nevada Legislature" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
+      <img src="{{ '/assets/images/events/RG121.jpg' | relative_url }}" alt="Musicians performing at a community gathering" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
+      <img src="{{ '/assets/images/events/RG88.jpg' | relative_url }}" alt="Community member making a sign" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
+      <img src="{{ '/assets/images/events/RG93.jpg' | relative_url }}" alt="Memorial at the Nevada Senate" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
+      <img src="{{ '/assets/images/events/RG133.jpg' | relative_url }}" alt="Turn your pain into purpose" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
+      <img src="{{ '/assets/images/events/RG106.jpg' | relative_url }}" alt="Rally at the Nevada Legislature with flags" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-brand text-white text-center">
+  <div class="max-w-2xl mx-auto px-4">
+    <h2 class="font-heading text-3xl font-bold mb-4">Get Involved</h2>
+    <p class="text-lg text-white/85 mb-8">Whether you have five minutes or five hours a week, there's a place for you. Join us at an upcoming event or reach out to learn more.</p>
+    <a href="{{ '/events' | relative_url }}" class="inline-block bg-white text-brand hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-colors">Join Us at an Event</a>
   </div>
 </section>
 

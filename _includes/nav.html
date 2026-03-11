@@ -1,17 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="{{ '/' | relative_url }}">Indivisible Carson City</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+<nav class="bg-brand">
+  <div class="px-4 py-3 flex items-center justify-between max-w-6xl mx-auto">
+    <a href="{{ '/' | relative_url }}" class="hover:opacity-90">
+      <img src="{{ '/assets/images/branding/indivisible_logo.png' | relative_url }}" alt="Indivisible Carson City" class="h-9 w-auto">
+    </a>
+
+    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="lg:hidden text-white focus:outline-none" aria-label="Toggle navigation">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
     </button>
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto">
-        {% for link in site.data.navigation %}
-        <li class="nav-item">
-          <a class="nav-link{% if page.url == link.url %} active{% endif %}" href="{{ link.url | relative_url }}">{{ link.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
+
+    <ul class="hidden lg:flex items-center gap-6 list-none m-0 p-0">
+      {% for link in site.data.navigation %}
+      <li>
+        <a href="{{ link.url | relative_url }}" class="text-white/80 hover:text-white no-underline text-sm font-medium tracking-wide transition-colors{% if page.url == link.url %} text-white{% endif %}">{{ link.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-white/20 px-4 pb-3">
+    {% for link in site.data.navigation %}
+    <a href="{{ link.url | relative_url }}" class="block py-2 text-white/80 hover:text-white no-underline text-sm{% if page.url == link.url %} text-white{% endif %}">{{ link.title }}</a>
+    {% endfor %}
   </div>
 </nav>

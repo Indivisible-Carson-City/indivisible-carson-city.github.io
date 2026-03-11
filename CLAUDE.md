@@ -13,8 +13,9 @@ eval "$(rbenv init - zsh)" && bundle exec jekyll build             # Build to _s
 - **Ruby 3.3.6** via rbenv
 
 ## Branding
-- Indivisible Blue: `#002147` (navbar, footer, primary buttons)
+- Indivisible Teal: `#28B5B5` (navbar, footer, primary buttons)
 - Indivisible Red: `#BB133E` (accent buttons, CTAs)
+- Logo: `assets/images/branding/indivisible_logo.png`
 - Headings: Roboto Condensed (Google Fonts)
 - Body: system font stack
 
@@ -25,7 +26,7 @@ eval "$(rbenv init - zsh)" && bundle exec jekyll build             # Build to _s
 - `.github/workflows/jekyll.yml` — GitHub Actions deploy workflow
 
 ## Pages
-- Home (`/`) — hero, mission, upcoming events
+- Home (`/`) — hero (photo background), mission, upcoming events, photo gallery
 - About (`/about`) — about the group
 - Events (`/events`) — full events listing
 
