@@ -8,7 +8,7 @@ eval "$(rbenv init - zsh)" && bundle exec jekyll build             # Build to _s
 
 ## Stack
 - **Jekyll 4.4** (not github-pages gem)
-- **Bootstrap 5.3 via CDN** — no build tools, no node_modules
+- **Tailwind CSS via CDN** — no build tools, no node_modules
 - **GitHub Pages** via GitHub Actions for deployment
 - **Ruby 3.3.6** via rbenv
 
@@ -20,9 +20,9 @@ eval "$(rbenv init - zsh)" && bundle exec jekyll build             # Build to _s
 - Body: system font stack
 
 ## Key Files
-- `_data/events.yml` — event list (placeholder data, will eventually come from external API)
+- `assets/js/events.js` — client-side Mobilize API fetch + event card rendering
 - `_data/navigation.yml` — nav links
-- `assets/css/custom.css` — brand overrides on top of Bootstrap
+- `assets/css/custom.css` — brand overrides on top of Tailwind
 - `.github/workflows/jekyll.yml` — GitHub Actions deploy workflow
 
 ## Pages
@@ -37,4 +37,4 @@ eval "$(rbenv init - zsh)" && bundle exec jekyll build             # Build to _s
 ## Do Not
 - Commit `.claude/` or `_site/`
 - Edit `Gemfile.lock` directly — run `bundle install` instead
-- Add node_modules or JS build tools — Bootstrap is CDN-only
+- Add node_modules or JS build tools — Tailwind is CDN-only

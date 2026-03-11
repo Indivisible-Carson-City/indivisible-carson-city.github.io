@@ -5,7 +5,7 @@ Website for Indivisible Carson City — a local grassroots group promoting progr
 ## Tech Stack
 
 - [Jekyll 4](https://jekyllrb.com/) — static site generator
-- [Bootstrap 5](https://getbootstrap.com/) — CSS framework (via CDN)
+- [Tailwind CSS](https://tailwindcss.com/) — utility-first CSS (via CDN)
 - [GitHub Pages](https://pages.github.com/) — hosting via GitHub Actions
 
 ## Local Development
@@ -18,8 +18,8 @@ Website for Indivisible Carson City — a local grassroots group promoting progr
 ### Setup
 
 ```bash
-git clone https://github.com/Indivisible-Carson-City/website.git
-cd website
+git clone https://github.com/Indivisible-Carson-City/indivisible-carson-city.github.io.git
+cd indivisible-carson-city.github.io
 rbenv install 3.3.6    # if not already installed
 bundle install
 ```
@@ -45,12 +45,12 @@ To set up GitHub Pages:
 ```
 ├── _config.yml          # Jekyll configuration
 ├── _layouts/            # Page templates (default, home, page)
-├── _includes/           # Reusable components (nav, footer, event-card)
+├── _includes/           # Reusable components (nav, footer)
 ├── _data/
-│   ├── events.yml       # Upcoming events
 │   └── navigation.yml   # Nav links
 ├── assets/
-│   └── css/custom.css   # Brand overrides
+│   ├── css/custom.css   # Brand overrides
+│   └── js/events.js     # Mobilize API event loader
 ├── index.md             # Homepage
 ├── about.md             # About page
 ├── events.html          # Events listing page
