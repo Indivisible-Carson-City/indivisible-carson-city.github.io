@@ -9,7 +9,7 @@ eval "$(rbenv init - zsh)" && bundle exec jekyll build             # Build to _s
 ## Stack
 - **Jekyll 4.4** (not github-pages gem)
 - **Bootstrap 5.3 via CDN** — no build tools, no node_modules
-- **Decap CMS v3** at `/admin` with Netlify Identity + Git Gateway
+- **GitHub Pages** via GitHub Actions for deployment
 - **Ruby 3.3.6** via rbenv
 
 ## Branding
@@ -20,16 +20,18 @@ eval "$(rbenv init - zsh)" && bundle exec jekyll build             # Build to _s
 
 ## Key Files
 - `_data/events.yml` — event list (placeholder data, will eventually come from external API)
-- `_data/navigation.yml` — nav links (editable via CMS)
-- `admin/config.yml` — Decap CMS collections config
+- `_data/navigation.yml` — nav links
 - `assets/css/custom.css` — brand overrides on top of Bootstrap
-- `netlify.toml` — build config and security headers
+- `.github/workflows/jekyll.yml` — GitHub Actions deploy workflow
+
+## Pages
+- Home (`/`) — hero, mission, upcoming events
+- About (`/about`) — about the group
+- Events (`/events`) — full events listing
 
 ## Conventions
-- `future: true` is set in `_config.yml` so today's posts render locally
-- Netlify Identity widget script is on every page (required for email confirmation flow)
-- Default layout includes login redirect script for CMS users
-- CMS media uploads go to `assets/uploads/`
+- `future: true` is set in `_config.yml` so future-dated events render locally
+- GitHub Actions workflow builds and deploys on push to `main`
 
 ## Do Not
 - Commit `.claude/` or `_site/`

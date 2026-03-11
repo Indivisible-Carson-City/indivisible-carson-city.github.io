@@ -1,6 +1,6 @@
 - title: Home
   url: /
-- title: Blog
-  url: /blog
 - title: About
   url: /about
+- title: Events
+  url: /events

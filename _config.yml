@@ -5,23 +5,15 @@ description: >-
 url: "https://indivisiblecarsoncity.org"
 baseurl: ""
 
-permalink: /blog/:year/:month/:day/:title/
-
 future: true
 
 defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
   - scope:
       path: ""
     values:
       layout: "page"
 
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
 
@@ -31,4 +23,3 @@ exclude:
   - node_modules/
   - vendor/
   - README.md
-  - netlify.toml

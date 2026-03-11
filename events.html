@@ -1,0 +1,20 @@
+---
+layout: default
+title: Events
+permalink: /events/
+---
+
+<section class="py-5">
+  <div class="container">
+    <h1 class="text-center mb-4">Upcoming Events</h1>
+    {% if site.data.events.size > 0 %}
+    <div class="row">
+      {% for event in site.data.events %}
+        {% include event-card.html event=event %}
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-center text-muted">No upcoming events. Check back soon!</p>
+    {% endif %}
+  </div>
+</section>
