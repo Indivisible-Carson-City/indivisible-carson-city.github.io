@@ -4,18 +4,19 @@ layout: default
 
 <section class="relative min-h-[500px] flex items-center justify-center text-white text-center bg-cover" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{{ '/assets/images/events/RG72.jpg' | relative_url }}'); background-position: center 80%;">
   <div class="max-w-3xl mx-auto px-4 py-20">
-    <h1 class="font-heading text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Turn Your Outrage Into Action</h1>
-    <p class="text-xl md:text-2xl mb-8 text-white/90">Grassroots civic engagement in Carson City, Nevada</p>
+    <h1 class="font-heading text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Stand Up for Democracy</h1>
+    <p class="text-xl md:text-2xl mb-8 text-white/90">Turn Your Outrage into Action</p>
     <div class="flex flex-wrap justify-center gap-4">
       <a href="#events" class="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-full font-semibold transition-colors">Upcoming Events</a>
       <a href="{{ '/about' | relative_url }}" class="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-full font-semibold transition-colors">Learn More</a>
     </div>
   </div>
+  <span class="absolute bottom-2 right-3 text-xs text-white/50 hover:text-white/80 transition-colors">Photo: Josh Hobson</span>
 </section>
 
 <section class="py-16">
   <div class="max-w-4xl mx-auto px-4 text-center">
-    <img src="{{ '/assets/images/branding/indivisible_circle_logo.jpg' | relative_url }}" alt="Indivisible Carson City — Stronger Together" class="w-36 h-36 rounded-full mx-auto mb-6 shadow-lg">
+    <img src="{{ '/assets/images/branding/indivisible_circle_logo_new.png' | relative_url }}" alt="Indivisible Carson City — Stronger Together" class="w-36 h-36 rounded-full mx-auto mb-6 shadow-lg">
     <h2 class="font-heading text-3xl font-bold mb-4">Who We Are</h2>
     <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">Indivisible Carson City is a grassroots group of democracy-loving people from Nevada's Capital City region who support each other in civic engagement. We take action to support the principles and practices of democratic government at the local, state, and national levels.</p>
   </div>
@@ -24,21 +25,38 @@ layout: default
 <section class="py-16 bg-gray-50">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="font-heading text-3xl font-bold text-center mb-10">What We Do</h2>
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       <div class="text-center">
-        <img src="{{ '/assets/images/events/RG108.jpg' | relative_url }}" alt="Rally at the Nevada Legislature" class="w-full h-52 object-cover rounded-xl mb-4" loading="lazy">
+        <div class="relative group mb-4">
+          <img src="{{ '/assets/images/events/RG108.jpg' | relative_url }}" alt="Rally at the Nevada Legislature" class="w-full h-52 object-cover rounded-xl" loading="lazy">
+          <span class="absolute bottom-1 right-1 text-xs text-white/0 group-hover:text-white/80 bg-black/0 group-hover:bg-black/40 px-1.5 py-0.5 rounded transition-all">Photo: Josh Hobson</span>
+        </div>
         <h3 class="font-heading font-bold text-xl mb-2">Organize &amp; Mobilize</h3>
         <p class="text-gray-600">We attend and organize town halls, rallies, and community forums to make our voices heard.</p>
       </div>
       <div class="text-center">
-        <img src="{{ '/assets/images/events/RG55.jpg' | relative_url }}" alt="Community rally on Carson Street" class="w-full h-52 object-cover rounded-xl mb-4" loading="lazy">
+        <div class="relative group mb-4">
+          <img src="{{ '/assets/images/events/voter_reg.jpg' | relative_url }}" alt="Voter registration station" class="w-full h-52 object-cover rounded-xl" loading="lazy">
+          <span class="absolute bottom-1 right-1 text-xs text-white/0 group-hover:text-white/80 bg-black/0 group-hover:bg-black/40 px-1.5 py-0.5 rounded transition-all">Photo: Kathleen Bent</span>
+        </div>
         <h3 class="font-heading font-bold text-xl mb-2">Register &amp; Vote</h3>
         <p class="text-gray-600">We register voters and help our neighbors make their voices heard at the ballot box.</p>
       </div>
       <div class="text-center">
-        <img src="{{ '/assets/images/events/RG89.jpg' | relative_url }}" alt="We The People Means All of Us" class="w-full h-52 object-cover rounded-xl mb-4" loading="lazy">
+        <div class="relative group mb-4">
+          <img src="{{ '/assets/images/events/RG89.jpg' | relative_url }}" alt="We The People Means All of Us" class="w-full h-52 object-cover rounded-xl" loading="lazy">
+          <span class="absolute bottom-1 right-1 text-xs text-white/0 group-hover:text-white/80 bg-black/0 group-hover:bg-black/40 px-1.5 py-0.5 rounded transition-all">Photo: Josh Hobson</span>
+        </div>
         <h3 class="font-heading font-bold text-xl mb-2">Hold Leaders Accountable</h3>
         <p class="text-gray-600">We connect with local, state, and federal representatives to demand they work for the people.</p>
+      </div>
+      <div class="text-center">
+        <div class="relative group mb-4">
+          <img src="{{ '/assets/images/events/RG133.jpg' | relative_url }}" alt="Inform the public" class="w-full h-52 object-cover rounded-xl" loading="lazy">
+          <span class="absolute bottom-1 right-1 text-xs text-white/0 group-hover:text-white/80 bg-black/0 group-hover:bg-black/40 px-1.5 py-0.5 rounded transition-all">Photo: Josh Hobson</span>
+        </div>
+        <h3 class="font-heading font-bold text-xl mb-2">Inform &amp; Educate</h3>
+        <p class="text-gray-600">Inform the public of the truth regarding the actions of the Trump regime and their harmful impact on America and the world.</p>
       </div>
     </div>
   </div>
@@ -56,16 +74,40 @@ layout: default
 <script src="{{ '/assets/js/events.js' | relative_url }}"></script>
 <script>loadMobilizeEvents('home-events', 3);</script>
 
+<section class="py-16">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">A core principle behind all Indivisible events is a commitment to nonviolent action. Download our <a href="{{ '/assets/documents/top_10_rules_for_effective_non_violent_protests.pdf' | relative_url }}" class="text-brand hover:text-brand-dark font-semibold underline" target="_blank" rel="noopener">Top 10 Rules for Effective, Peaceful, Non-Violent Protest</a> and read them if you plan to attend one of our events.</p>
+  </div>
+</section>
+
 <section class="py-16 bg-gray-50">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="font-heading text-3xl font-bold text-center mb-10">In Action</h2>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-      <img src="{{ '/assets/images/events/RG136.jpg' | relative_url }}" alt="Megaphone at the Nevada Legislature" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
-      <img src="{{ '/assets/images/events/RG121.jpg' | relative_url }}" alt="Musicians performing at a community gathering" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
-      <img src="{{ '/assets/images/events/RG88.jpg' | relative_url }}" alt="Community member making a sign" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
-      <img src="{{ '/assets/images/events/RG93.jpg' | relative_url }}" alt="Memorial at the Nevada Senate" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
-      <img src="{{ '/assets/images/events/RG133.jpg' | relative_url }}" alt="Turn your pain into purpose" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
-      <img src="{{ '/assets/images/events/RG106.jpg' | relative_url }}" alt="Rally at the Nevada Legislature with flags" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
+      <div class="relative group">
+        <img src="{{ '/assets/images/events/RG55.jpg' | relative_url }}" alt="Community gathering at Fox Brew Pub" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
+        <span class="absolute bottom-1 right-1 text-xs text-white/0 group-hover:text-white/80 bg-black/0 group-hover:bg-black/40 px-1.5 py-0.5 rounded transition-all">Photo: Josh Hobson</span>
+      </div>
+      <div class="relative group">
+        <img src="{{ '/assets/images/events/RG121.jpg' | relative_url }}" alt="Musicians performing at a community gathering" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
+        <span class="absolute bottom-1 right-1 text-xs text-white/0 group-hover:text-white/80 bg-black/0 group-hover:bg-black/40 px-1.5 py-0.5 rounded transition-all">Photo: Josh Hobson</span>
+      </div>
+      <div class="relative group">
+        <img src="{{ '/assets/images/events/RG88.jpg' | relative_url }}" alt="Community member making a sign" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
+        <span class="absolute bottom-1 right-1 text-xs text-white/0 group-hover:text-white/80 bg-black/0 group-hover:bg-black/40 px-1.5 py-0.5 rounded transition-all">Photo: Josh Hobson</span>
+      </div>
+      <div class="relative group">
+        <img src="{{ '/assets/images/events/RG93.jpg' | relative_url }}" alt="Memorial at the Nevada Senate" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
+        <span class="absolute bottom-1 right-1 text-xs text-white/0 group-hover:text-white/80 bg-black/0 group-hover:bg-black/40 px-1.5 py-0.5 rounded transition-all">Photo: Josh Hobson</span>
+      </div>
+      <div class="relative group">
+        <img src="{{ '/assets/images/events/RG136.jpg' | relative_url }}" alt="Megaphone at the Nevada Legislature" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
+        <span class="absolute bottom-1 right-1 text-xs text-white/0 group-hover:text-white/80 bg-black/0 group-hover:bg-black/40 px-1.5 py-0.5 rounded transition-all">Photo: Josh Hobson</span>
+      </div>
+      <div class="relative group">
+        <img src="{{ '/assets/images/events/RG106.jpg' | relative_url }}" alt="Rally at the Nevada Legislature with flags" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
+        <span class="absolute bottom-1 right-1 text-xs text-white/0 group-hover:text-white/80 bg-black/0 group-hover:bg-black/40 px-1.5 py-0.5 rounded transition-all">Photo: Josh Hobson</span>
+      </div>
     </div>
   </div>
 </section>
@@ -74,7 +116,10 @@ layout: default
   <div class="max-w-2xl mx-auto px-4">
     <h2 class="font-heading text-3xl font-bold mb-4">Get Involved</h2>
     <p class="text-lg text-white/85 mb-8">Whether you have five minutes or five hours a week, there's a place for you. Join us at an upcoming event or reach out to learn more.</p>
-    <a href="{{ '/events' | relative_url }}" class="inline-block bg-white text-brand hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-colors">Join Us at an Event</a>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="{{ '/events' | relative_url }}" class="inline-block bg-white text-brand hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-colors">Join Us at an Event</a>
+      <a href="https://secure.everyaction.com/jD_xRfVpsUKo8NC_9NmmCw2" target="_blank" rel="noopener" class="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-3 rounded-full font-semibold transition-colors">Subscribe to our Newsletter</a>
+    </div>
   </div>
 </section>
 
