@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+description: "Learn about Indivisible Carson City — who we are, what we do, and how to join one of our ten volunteer teams defending democracy in Northern Nevada."
 ---
 
 ## Who We Are

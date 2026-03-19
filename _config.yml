@@ -12,6 +12,7 @@ defaults:
       path: ""
     values:
       layout: "page"
+      image: /assets/images/branding/indivisible_circle_logo_new.png
 
 plugins:
   - jekyll-seo-tag
