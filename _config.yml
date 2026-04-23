@@ -24,3 +24,4 @@ exclude:
   - node_modules/
   - vendor/
   - README.md
+  - tmp_feedback/
