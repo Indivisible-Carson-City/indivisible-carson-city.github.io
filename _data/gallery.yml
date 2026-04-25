@@ -1,0 +1,44 @@
+# Gallery — reverse chronological order (newest first)
+# To add a new event: add a new entry at the TOP of this list
+
+- title: "No Kings 3.0"
+  date: 2025-04-05
+  photos:
+    - image: /assets/images/events/NK3clocktowergrp.jpeg
+      alt: "No Kings 3.0 rally at the clock tower"
+      credit: "Coco Crum"
+    - image: /assets/images/events/NK3draftbonespurs.jpeg
+      alt: "No Kings 3.0 protester with Draft Bone Spurs sign"
+      credit: "Coco Crum"
+    - image: /assets/images/events/NK3groupshot2.jpeg
+      alt: "No Kings 3.0 group with protest signs"
+      credit: "Coco Crum"
+    - image: /assets/images/events/NK3manshirt.jpeg
+      alt: "No Kings 3.0 protester"
+      credit: "Coco Crum"
+  video:
+    url: https://www.youtube.com/embed/W3ferGbMUdU
+    title: "No Kings 3.0 — Video by Michael Madore"
+    credit: "Michael Madore"
+
+- title: "Rallies at the Legislature"
+  date: 2025-03-01
+  photos:
+    - image: /assets/images/events/RG55.jpg
+      alt: "Community gathering at Fox Brew Pub"
+      credit: "Josh Hobson"
+    - image: /assets/images/events/RG121.jpg
+      alt: "Musicians performing at a community gathering"
+      credit: "Josh Hobson"
+    - image: /assets/images/events/RG88.jpg
+      alt: "Community member making a sign"
+      credit: "Josh Hobson"
+    - image: /assets/images/events/RG93.jpg
+      alt: "Memorial at the Nevada Senate"
+      credit: "Josh Hobson"
+    - image: /assets/images/events/RG136.jpg
+      alt: "Megaphone at the Nevada Legislature"
+      credit: "Josh Hobson"
+    - image: /assets/images/events/RG106.jpg
+      alt: "Rally at the Nevada Legislature with flags"
+      credit: "Josh Hobson"

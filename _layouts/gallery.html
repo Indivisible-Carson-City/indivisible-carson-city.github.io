@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<section class="py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h1 class="font-heading text-4xl md:text-5xl font-bold text-center mb-12">Gallery</h1>
+
+    {% for event in site.data.gallery %}
+    <div class="{% unless forloop.first %}mt-16{% endunless %}">
+      <h2 class="font-heading text-2xl font-bold text-center mb-6">{{ event.title }}</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        {% for photo in event.photos %}
+        <div class="relative group">
+          <img src="{{ photo.image | relative_url }}" alt="{{ photo.alt }}" class="w-full h-48 md:h-64 object-cover rounded-xl hover:scale-[1.02] transition-transform" loading="lazy">
+          <span class="absolute bottom-1 right-1 text-xs text-white/0 group-hover:text-white/80 bg-black/0 group-hover:bg-black/40 px-1.5 py-0.5 rounded transition-all">Photo: {{ photo.credit }}</span>
+        </div>
+        {% endfor %}
+        {% if event.video %}
+        <div class="col-span-2 relative group">
+          <div class="w-full h-48 md:h-64 rounded-xl overflow-hidden">
+            <iframe src="{{ event.video.url }}" title="{{ event.video.title }}" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <span class="absolute bottom-1 right-1 text-xs text-white/0 group-hover:text-white/80 bg-black/0 group-hover:bg-black/40 px-1.5 py-0.5 rounded transition-all z-10">Video: {{ event.video.credit }}</span>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{{ content }}
