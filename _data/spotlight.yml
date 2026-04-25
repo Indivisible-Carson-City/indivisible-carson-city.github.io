@@ -1,0 +1,13 @@
+# Spotlight section — featured flyers/graphics on the homepage
+# To update: change the entries below. To hide the section, set enabled: false.
+
+enabled: true
+heading: "Spotlight"
+
+items:
+  - image: /assets/images/spotlight/veterans_speak_out.png
+    alt: "Veterans Speak Out — Memorial Day rally, May 23, 10 AM - Noon, Legislative Plaza, Carson City"
+    link: https://www.mobilize.us/indivisiblecarsoncity/event/932816/
+  - image: /assets/images/spotlight/veteran_cuts.png
+    alt: "They served. Now they're being cut — changes to veteran benefits under the Trump administration"
+    link: https://www.mobilize.us/indivisiblecarsoncity/event/932816/

@@ -2,6 +2,18 @@
 layout: default
 ---
 
+{% if site.data.alert.enabled %}
+<div id="alert-banner" class="text-white text-center py-3 px-4 relative" style="background-color: #00417b;">
+  <p class="text-sm md:text-base font-semibold">
+    {{ site.data.alert.text }}
+    {% if site.data.alert.link %}
+      <a href="{{ site.data.alert.link }}" class="underline ml-1 hover:text-white/80" {% if site.data.alert.link contains '://' %}target="_blank" rel="noopener"{% endif %}>{{ site.data.alert.link_text | default: "Learn more" }} &rarr;</a>
+    {% endif %}
+  </p>
+  <button onclick="document.getElementById('alert-banner').remove()" class="absolute right-3 top-1/2 -translate-y-1/2 text-white/80 hover:text-white text-xl leading-none" aria-label="Dismiss alert">&times;</button>
+</div>
+{% endif %}
+
 <section class="relative min-h-[500px] flex items-center justify-center text-white text-center bg-cover" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{{ '/assets/images/events/RG72.jpg' | relative_url }}'); background-position: center 80%;">
   <div class="max-w-3xl mx-auto px-4 py-20">
     <h1 class="font-heading text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Stand Up for Democracy</h1>
@@ -22,7 +34,28 @@ layout: default
   </div>
 </section>
 
+{% if site.data.spotlight.enabled %}
 <section class="py-16 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="font-heading text-3xl font-bold text-center mb-10">{{ site.data.spotlight.heading }}</h2>
+    <div class="grid {% if site.data.spotlight.items.size > 1 %}md:grid-cols-2{% endif %} gap-6 justify-items-center">
+      {% for item in site.data.spotlight.items %}
+      <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+        {% if item.link %}
+        <a href="{{ item.link }}" target="_blank" rel="noopener">
+          <img src="{{ item.image | relative_url }}" alt="{{ item.alt }}" class="w-full h-auto hover:opacity-90 transition-opacity" loading="lazy">
+        </a>
+        {% else %}
+        <img src="{{ item.image | relative_url }}" alt="{{ item.alt }}" class="w-full h-auto" loading="lazy">
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="py-16">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="font-heading text-3xl font-bold text-center mb-10">What We Do</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
