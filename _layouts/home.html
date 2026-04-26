@@ -2,7 +2,13 @@
 layout: default
 ---
 
-{% if site.data.alert.enabled %}
+{% assign alert_expired = false %}
+{% if site.data.alert.expires %}
+  {% assign alert_expires_date = site.data.alert.expires | date: "%s" | plus: 86400 %}
+  {% assign now = site.time | date: "%s" | plus: 0 %}
+  {% if now >= alert_expires_date %}{% assign alert_expired = true %}{% endif %}
+{% endif %}
+{% if site.data.alert.enabled and alert_expired == false %}
 <div id="alert-banner" class="text-white text-center py-3 px-4 relative" style="background-color: #00417b;">
   <p class="text-sm md:text-base font-semibold">
     {{ site.data.alert.text }}
@@ -34,7 +40,13 @@ layout: default
   </div>
 </section>
 
-{% if site.data.spotlight.enabled %}
+{% assign spotlight_expired = false %}
+{% if site.data.spotlight.expires %}
+  {% assign spotlight_expires_date = site.data.spotlight.expires | date: "%s" | plus: 86400 %}
+  {% assign now = site.time | date: "%s" | plus: 0 %}
+  {% if now >= spotlight_expires_date %}{% assign spotlight_expired = true %}{% endif %}
+{% endif %}
+{% if site.data.spotlight.enabled and spotlight_expired == false %}
 <section class="py-16 bg-gray-50">
   <div class="max-w-4xl mx-auto px-4">
     <h2 class="font-heading text-3xl font-bold text-center mb-10">{{ site.data.spotlight.heading }}</h2>

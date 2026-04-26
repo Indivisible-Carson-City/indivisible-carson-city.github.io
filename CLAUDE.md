@@ -15,26 +15,42 @@ eval "$(rbenv init - zsh)" && bundle exec jekyll build             # Build to _s
 ## Branding
 - Indivisible Teal: `#28B5B5` (navbar, footer, primary buttons)
 - Indivisible Red: `#BB133E` (accent buttons, CTAs)
+- Alert Banner Navy: `#00417b`
 - Logo: `assets/images/branding/indivisible_logo.png`
 - Headings: Roboto Condensed (Google Fonts)
 - Body: system font stack
 
 ## Key Files
 - `assets/js/events.js` — client-side Mobilize API fetch + event card rendering
-- `_data/navigation.yml` — nav links
+- `_plugins/substack_feed.rb` — fetches Substack RSS at build time into `site.data.substack_posts`
 - `assets/css/custom.css` — brand overrides on top of Tailwind
-- `.github/workflows/jekyll.yml` — GitHub Actions deploy workflow
+- `.github/workflows/jekyll.yml` — GitHub Actions deploy workflow (push + daily cron)
+
+## Data Files
+- `_data/alert.yml` — homepage alert banner (text, link, expires date)
+- `_data/spotlight.yml` — homepage spotlight flyers (images, links, expires date)
+- `_data/gallery.yml` — photo gallery entries in reverse chronological order
+- `_data/navigation.yml` — nav links
 
 ## Pages
-- Home (`/`) — hero (photo background), mission, upcoming events, photo gallery
+- Home (`/`) — alert banner, hero, spotlight, mission, events, photo gallery, CTA
 - About (`/about`) — about the group
-- Events (`/events`) — full events listing
+- Events (`/events`) — full events listing from Mobilize API
+- Gallery (`/gallery`) — event photos in reverse chronological order
+- Newsletter (`/newsletter`) — recent Substack posts
+- Donate (`/donate`) — ActBlue donation link
 
 ## Conventions
 - `future: true` is set in `_config.yml` so future-dated events render locally
-- GitHub Actions workflow builds and deploys on push to `main`
+- GitHub Actions workflow builds and deploys on push to `main` and daily at 8 AM UTC
+- Alert and spotlight sections support `expires: YYYY-MM-DD` — auto-hide after that date on next build
+- Gallery entries go at the **top** of `_data/gallery.yml` (newest first)
+- Homepage "In Action" section shows only the most recent gallery entry
+- Spotlight flyer images go in `assets/images/spotlight/`
+- Event photos go in `assets/images/events/`
 
 ## Do Not
 - Commit `.claude/` or `_site/`
 - Edit `Gemfile.lock` directly — run `bundle install` instead
 - Add node_modules or JS build tools — Tailwind is CDN-only
+- Rely on third-party CORS proxies for client-side fetches — use build-time plugins instead

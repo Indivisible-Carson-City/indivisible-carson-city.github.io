@@ -3,6 +3,8 @@ name: Deploy Jekyll site to GitHub Pages
 on:
   push:
     branches: ["main"]
+  schedule:
+    - cron: "0 8 * * *"   # Daily rebuild at 8 AM UTC (1 AM PST) — expires stale alerts/spotlight
   workflow_dispatch:
 
 permissions:

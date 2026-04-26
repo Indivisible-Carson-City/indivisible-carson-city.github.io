@@ -1,8 +1,10 @@
 # Spotlight section — featured flyers/graphics on the homepage
 # To update: change the entries below. To hide the section, set enabled: false.
+# expires: date after which the section auto-hides (YYYY-MM-DD). Remove to show indefinitely.
 
 enabled: true
 heading: "Spotlight"
+expires: 2026-05-24
 
 items:
   - image: /assets/images/spotlight/veterans_speak_out.png
