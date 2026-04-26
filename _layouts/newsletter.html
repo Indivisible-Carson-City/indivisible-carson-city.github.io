@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<section class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h1 class="font-heading text-4xl md:text-5xl font-bold text-center mb-4">Newsletter</h1>
+    <p class="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">Recent posts from our Substack newsletter. <a href="https://indivisiblecarsoncity.substack.com/" class="text-brand hover:text-brand-dark font-semibold" target="_blank" rel="noopener">Subscribe here</a> to get updates in your inbox.</p>
+
+    {% if site.data.substack_posts.size > 0 %}
+    <div class="grid md:grid-cols-3 gap-6">
+      {% for post in site.data.substack_posts %}
+      <a href="{{ post.link }}" class="block bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all p-6" target="_blank" rel="noopener">
+        <h3 class="font-heading font-bold text-lg mb-2">{{ post.title }}</h3>
+        {% if post.date %}<p class="text-sm text-gray-500 mb-3">{{ post.date }}</p>{% endif %}
+        {% if post.description %}<p class="text-gray-600">{{ post.description }}</p>{% endif %}
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-center text-gray-400">No posts yet. Check back soon!</p>
+    {% endif %}
+  </div>
+</section>
+
+{{ content }}
