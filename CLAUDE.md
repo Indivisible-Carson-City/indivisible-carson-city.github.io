@@ -37,7 +37,7 @@ eval "$(rbenv init - zsh)" && bundle exec jekyll build             # Build to _s
 - About (`/about`) — about the group
 - Events (`/events`) — full events listing from Mobilize API
 - Gallery (`/gallery`) — event photos in reverse chronological order
-- Newsletter (`/newsletter`) — recent Substack posts
+- Blog (`/blog`) — recent Substack posts
 - Donate (`/donate`) — ActBlue donation link
 
 ## Conventions
