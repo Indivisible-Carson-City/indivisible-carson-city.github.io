@@ -13,10 +13,10 @@ eval "$(rbenv init - zsh)" && bundle exec jekyll build             # Build to _s
 - **Ruby 3.3.6** via rbenv
 
 ## Branding
-- Indivisible Teal: `#28B5B5` (navbar, footer, primary buttons)
-- Indivisible Red: `#BB133E` (accent buttons, CTAs)
-- Alert Banner Navy: `#00417b`
-- Logo: `assets/images/branding/indivisible_logo.png`
+- Indivisible Navy: `#00417b` (navbar, footer, alert banner, primary buttons) — Tailwind `brand`
+- Indivisible Navy Dark: `#002d54` (hover) — Tailwind `brand-dark`
+- Indivisible Red: `#BB133E` (accent buttons, CTAs) — Tailwind `accent`
+- Logos (do not recolor): `assets/images/branding/indivisible_logo.png`, `assets/images/branding/indivisible_circle_logo_new.png`
 - Headings: Roboto Condensed (Google Fonts)
 - Body: system font stack
 

@@ -32,12 +32,12 @@ body {
 }
 
 .prose a {
-  color: #28B5B5;
+  color: #00417b;
   text-decoration: underline;
 }
 
 .prose a:hover {
-  color: #1F9494;
+  color: #002d54;
 }
 
 .prose strong {
