@@ -9,7 +9,7 @@ layout: default
   {% if now >= alert_expires_date %}{% assign alert_expired = true %}{% endif %}
 {% endif %}
 {% if site.data.alert.enabled and alert_expired == false %}
-<div id="alert-banner" class="text-white text-center py-3 px-4 relative" style="background-color: #00417b;">
+<div id="alert-banner" class="text-white text-center py-3 px-4 relative" style="background-color: #1a5c9e;">
   <p class="text-sm md:text-base font-semibold">
     {{ site.data.alert.text }}
     {% if site.data.alert.link %}
