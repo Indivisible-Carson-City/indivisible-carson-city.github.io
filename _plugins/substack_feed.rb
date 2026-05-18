@@ -1,5 +1,6 @@
 require "net/http"
 require "rexml/document"
+require "yaml"
 
 module Jekyll
   class SubstackFeed < Generator
@@ -8,11 +9,33 @@ module Jekyll
 
     FEED_URL = "https://indivisiblecarsoncity.substack.com/feed"
     USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+    CACHE_FILE = "_data/substack_cache.yml"
 
     def generate(site)
+      items = fetch_and_parse
+      if items && !items.empty?
+        site.data["substack_posts"] = items
+        save_cache(site, items)
+      else
+        cached = load_cache(site)
+        if cached && !cached.empty?
+          Jekyll.logger.info "SubstackFeed:", "Using cached posts (#{cached.length} posts)"
+          site.data["substack_posts"] = cached
+        else
+          site.data["substack_posts"] = []
+        end
+      end
+    end
+
+    private
+
+    def fetch_and_parse
       response = http_get(FEED_URL, max_redirects: 5)
 
-      raise "HTTP #{response.code}" unless response.is_a?(Net::HTTPSuccess)
+      unless response.is_a?(Net::HTTPSuccess)
+        Jekyll.logger.warn "SubstackFeed:", "Could not fetch feed: HTTP #{response.code}"
+        return nil
+      end
 
       doc = REXML::Document.new(response.body)
       items = []
@@ -33,13 +56,28 @@ module Jekyll
         }
       end
 
-      site.data["substack_posts"] = items
+      items
     rescue => e
       Jekyll.logger.warn "SubstackFeed:", "Could not fetch feed: #{e.message}"
-      site.data["substack_posts"] = []
+      nil
     end
 
-    private
+    def save_cache(site, items)
+      path = File.join(site.source, CACHE_FILE)
+      File.write(path, items.to_yaml)
+      Jekyll.logger.info "SubstackFeed:", "Cached #{items.length} posts to #{CACHE_FILE}"
+    rescue => e
+      Jekyll.logger.warn "SubstackFeed:", "Could not write cache: #{e.message}"
+    end
+
+    def load_cache(site)
+      path = File.join(site.source, CACHE_FILE)
+      return nil unless File.exist?(path)
+      YAML.safe_load(File.read(path), permitted_classes: [Date, Time])
+    rescue => e
+      Jekyll.logger.warn "SubstackFeed:", "Could not read cache: #{e.message}"
+      nil
+    end
 
     def http_get(url, max_redirects: 5)
       uri = URI(url)
