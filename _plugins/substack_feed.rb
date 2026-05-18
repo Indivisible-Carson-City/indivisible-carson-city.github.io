@@ -1,5 +1,5 @@
 require "net/http"
-require "rexml/document"
+require "json"
 require "yaml"
 
 module Jekyll
@@ -7,14 +7,12 @@ module Jekyll
     safe true
     priority :low
 
-    FEED_URL = "https://indivisiblecarsoncity.substack.com/feed"
-    USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+    FEED_URL = "https://api.rss2json.com/v1/api.json?rss_url=https://indivisiblecarsoncity.substack.com/feed"
+    USER_AGENT = "Mozilla/5.0 (compatible; IndivisibleCarsonCityBot/1.0; +https://indivisiblecarsoncity.org)"
     CACHE_FILE = "_data/substack_cache.yml"
 
-    PREFETCH_FILE = "_data/substack_feed.xml"
-
     def generate(site)
-      items = parse_prefetched(site) || fetch_and_parse
+      items = fetch_posts
       if items && !items.empty?
         site.data["substack_posts"] = items
         save_cache(site, items)
@@ -31,53 +29,35 @@ module Jekyll
 
     private
 
-    def parse_prefetched(site)
-      path = File.join(site.source, PREFETCH_FILE)
-      return nil unless File.exist?(path)
-      xml = File.read(path)
-      return nil if xml.strip.empty?
-      Jekyll.logger.info "SubstackFeed:", "Using pre-fetched feed from #{PREFETCH_FILE}"
-      parse_xml(xml)
-    rescue => e
-      Jekyll.logger.warn "SubstackFeed:", "Could not parse pre-fetched feed: #{e.message}"
-      nil
-    end
-
-    def fetch_and_parse
-      response = http_get(FEED_URL, max_redirects: 5)
-
-      unless response.is_a?(Net::HTTPSuccess)
-        Jekyll.logger.warn "SubstackFeed:", "Could not fetch feed: HTTP #{response.code}"
-        return nil
+    def fetch_posts
+      uri = URI(FEED_URL)
+      req = Net::HTTP::Get.new(uri)
+      req["User-Agent"] = USER_AGENT
+      response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true, open_timeout: 10, read_timeout: 10) do |http|
+        http.request(req)
       end
 
-      parse_xml(response.body)
-    rescue => e
-      Jekyll.logger.warn "SubstackFeed:", "Could not fetch feed: #{e.message}"
-      nil
-    end
+      raise "HTTP #{response.code}" unless response.is_a?(Net::HTTPSuccess)
 
-    def parse_xml(body)
-      doc = REXML::Document.new(body)
-      items = []
+      data = JSON.parse(response.body)
+      raise "API error: #{data['message']}" unless data["status"] == "ok"
 
-      doc.elements.each("rss/channel/item") do |item|
-        break if items.length >= 5
-
-        pub_date = item.elements["pubDate"]&.text
-        formatted_date = if pub_date
+      data["items"].first(5).map do |item|
+        pub_date = item["pubDate"]
+        formatted_date = if pub_date && !pub_date.empty?
           Time.parse(pub_date).strftime("%B %-d, %Y")
         end
 
-        items << {
-          "title"       => item.elements["title"]&.text || "Untitled",
-          "link"        => item.elements["link"]&.text,
+        {
+          "title"       => item["title"] || "Untitled",
+          "link"        => item["link"],
           "date"        => formatted_date,
-          "description" => item.elements["description"]&.text,
+          "description" => item["description"]&.then { |d| d.gsub(/<[^>]+>/, "").strip[0, 200] },
         }
       end
-
-      items
+    rescue => e
+      Jekyll.logger.warn "SubstackFeed:", "Could not fetch feed: #{e.message}"
+      nil
     end
 
     def save_cache(site, items)
@@ -95,24 +75,6 @@ module Jekyll
     rescue => e
       Jekyll.logger.warn "SubstackFeed:", "Could not read cache: #{e.message}"
       nil
-    end
-
-    def http_get(url, max_redirects: 5)
-      uri = URI(url)
-      max_redirects.times do
-        req = Net::HTTP::Get.new(uri)
-        req["User-Agent"] = USER_AGENT
-        req["Accept"] = "application/rss+xml, application/xml, text/xml, */*"
-        req["Accept-Language"] = "en-US,en;q=0.9"
-        response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https", open_timeout: 10, read_timeout: 10) do |http|
-          http.request(req)
-        end
-        return response unless response.is_a?(Net::HTTPRedirection)
-        location = response["location"]
-        return response unless location
-        uri = URI.join(uri.to_s, location)
-      end
-      raise "Too many redirects"
     end
   end
 end
