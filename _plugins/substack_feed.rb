@@ -11,8 +11,10 @@ module Jekyll
     USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
     CACHE_FILE = "_data/substack_cache.yml"
 
+    PREFETCH_FILE = "_data/substack_feed.xml"
+
     def generate(site)
-      items = fetch_and_parse
+      items = parse_prefetched(site) || fetch_and_parse
       if items && !items.empty?
         site.data["substack_posts"] = items
         save_cache(site, items)
@@ -29,6 +31,18 @@ module Jekyll
 
     private
 
+    def parse_prefetched(site)
+      path = File.join(site.source, PREFETCH_FILE)
+      return nil unless File.exist?(path)
+      xml = File.read(path)
+      return nil if xml.strip.empty?
+      Jekyll.logger.info "SubstackFeed:", "Using pre-fetched feed from #{PREFETCH_FILE}"
+      parse_xml(xml)
+    rescue => e
+      Jekyll.logger.warn "SubstackFeed:", "Could not parse pre-fetched feed: #{e.message}"
+      nil
+    end
+
     def fetch_and_parse
       response = http_get(FEED_URL, max_redirects: 5)
 
@@ -37,7 +51,14 @@ module Jekyll
         return nil
       end
 
-      doc = REXML::Document.new(response.body)
+      parse_xml(response.body)
+    rescue => e
+      Jekyll.logger.warn "SubstackFeed:", "Could not fetch feed: #{e.message}"
+      nil
+    end
+
+    def parse_xml(body)
+      doc = REXML::Document.new(body)
       items = []
 
       doc.elements.each("rss/channel/item") do |item|
@@ -57,9 +78,6 @@ module Jekyll
       end
 
       items
-    rescue => e
-      Jekyll.logger.warn "SubstackFeed:", "Could not fetch feed: #{e.message}"
-      nil
     end
 
     def save_cache(site, items)

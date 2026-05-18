@@ -33,6 +33,16 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      - name: Pre-fetch Substack feed
+        run: |
+          curl -sf --max-time 15 \
+            -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" \
+            -H "Accept: application/rss+xml, application/xml, text/xml" \
+            -o _data/substack_feed.xml \
+            "https://indivisiblecarsoncity.substack.com/feed" \
+          && echo "Substack feed fetched successfully" \
+          || echo "Substack feed fetch failed — will use cache"
+
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}" --future
         env:
