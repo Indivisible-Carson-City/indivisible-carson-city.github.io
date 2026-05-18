@@ -7,7 +7,7 @@ module Jekyll
     priority :low
 
     FEED_URL = "https://indivisiblecarsoncity.substack.com/feed"
-    USER_AGENT = "Mozilla/5.0 (compatible; IndivisibleCarsonCityBot/1.0; +https://indivisiblecarsoncity.org)"
+    USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
 
     def generate(site)
       response = http_get(FEED_URL, max_redirects: 5)
@@ -46,6 +46,8 @@ module Jekyll
       max_redirects.times do
         req = Net::HTTP::Get.new(uri)
         req["User-Agent"] = USER_AGENT
+        req["Accept"] = "application/rss+xml, application/xml, text/xml, */*"
+        req["Accept-Language"] = "en-US,en;q=0.9"
         response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https", open_timeout: 10, read_timeout: 10) do |http|
           http.request(req)
         end
