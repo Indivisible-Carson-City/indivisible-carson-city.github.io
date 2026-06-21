@@ -1,0 +1,41 @@
+---
+- title: 'INVCC Membership Meeting: July'
+  iso_date: '2026-07-28'
+  iso_end:
+  date_display: Tue, July 28
+  end_display:
+  time_display: 6:00 pm – 7:30 pm
+  location: Details with Registration
+  description:
+  register_url:
+  more_url:
+- title: 'INVCC Membership Meeting: Sierra Club Toiyabe Chapter'
+  iso_date: '2026-08-25'
+  iso_end:
+  date_display: Tue, August 25
+  end_display:
+  time_display: 6:00 pm – 7:30 pm
+  location: Details with Registration
+  description:
+  register_url:
+  more_url:
+- title: Solidarity Saturdays
+  iso_date: '2026-09-12'
+  iso_end:
+  date_display: Sat, September 12
+  end_display:
+  time_display: 11:00 am – 1:00 pm
+  location: Legislative Plaza, Carson City
+  description:
+  register_url: https://www.mobilize.us/indivisiblecarsoncity/event/955040/
+  more_url:
+- title: Solidarity Saturdays
+  iso_date: '2026-09-26'
+  iso_end:
+  date_display: Sat, September 26
+  end_display:
+  time_display: 11:00 am – 1:00 pm
+  location: Legislative Plaza, Carson City
+  description:
+  register_url: https://www.mobilize.us/indivisiblecarsoncity/event/955041/
+  more_url:

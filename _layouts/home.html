@@ -110,14 +110,34 @@ layout: default
 <section id="events" class="py-16">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="font-heading text-3xl font-bold text-center mb-10">Upcoming Events</h2>
-    <div id="home-events"></div>
+    {% if site.data.sheet_events.size > 0 %}
+    <div class="grid md:grid-cols-3 gap-6">
+      {% for event in site.data.sheet_events limit:3 %}
+      <div class="bg-white rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all p-6 flex flex-col">
+        <h3 class="font-heading font-bold text-lg mb-2">{{ event.title }}</h3>
+        <p class="text-sm text-gray-500 mb-4">
+          {% if event.date_display %}{{ event.date_display }}{% if event.end_display %} – {{ event.end_display }}{% endif %}{% endif %}
+          {% if event.time_display %}<br>{{ event.time_display }}{% endif %}
+          {% if event.location %}<br>{{ event.location }}{% endif %}
+        </p>
+        {% if event.description %}<p class="text-gray-600 mb-4">{{ event.description }}</p>{% endif %}
+        {% if event.register_url or event.more_url %}
+        <div class="mt-auto flex flex-wrap items-center gap-3">
+          {% if event.register_url %}<a href="{{ event.register_url }}" class="inline-block bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors" target="_blank" rel="noopener">Register</a>{% endif %}
+          {% if event.more_url %}<a href="{{ event.more_url }}" class="text-brand hover:text-brand-dark text-sm font-semibold transition-colors" target="_blank" rel="noopener">More info &rarr;</a>{% endif %}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-center text-gray-400">No upcoming events right now. Check back soon!</p>
+    {% endif %}
     <div class="text-center mt-8">
-      <a href="https://www.mobilize.us/indivisiblecarsoncity/" class="text-brand hover:text-brand-dark font-semibold transition-colors" target="_blank" rel="noopener">View all events on Mobilize &rarr;</a>
+      <a href="{{ '/events' | relative_url }}" class="text-brand hover:text-brand-dark font-semibold transition-colors">See all events &rarr;</a>
     </div>
   </div>
 </section>
-<script src="{{ '/assets/js/events.js' | relative_url }}"></script>
-<script>loadMobilizeEvents('home-events', 3);</script>
 
 <section class="py-16">
   <div class="max-w-4xl mx-auto px-4 text-center">
