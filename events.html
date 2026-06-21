@@ -6,13 +6,39 @@ description: "Upcoming Indivisible Carson City events — rallies, voter registr
 ---
 
 <section class="py-16">
-  <div class="max-w-6xl mx-auto px-4">
+  <div class="max-w-3xl mx-auto px-4">
     <h1 class="font-heading text-4xl font-bold text-center mb-10">Upcoming Events</h1>
-    <div id="events-list"></div>
-    <div class="text-center mt-8">
-      <a href="https://www.mobilize.us/indivisiblecarsoncity/" class="text-brand hover:text-brand-dark font-semibold transition-colors" target="_blank" rel="noopener">View all events on Mobilize &rarr;</a>
+
+    {% if site.data.sheet_events.size > 0 %}
+    <ul class="divide-y divide-gray-200 border-y border-gray-200">
+      {% for event in site.data.sheet_events %}
+      <li class="py-6">
+        <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-6">
+          <div class="sm:w-48 sm:flex-shrink-0 mb-2 sm:mb-0">
+            {% if event.date_display %}<p class="font-heading font-bold text-brand text-base">{{ event.date_display }}{% if event.end_display %} – {{ event.end_display }}{% endif %}</p>{% endif %}
+            {% if event.time_display %}<p class="text-sm text-gray-600">{{ event.time_display }}</p>{% endif %}
+          </div>
+          <div class="flex-1">
+            <h2 class="font-heading font-bold text-xl mb-1">{{ event.title }}</h2>
+            {% if event.location %}<p class="text-sm text-gray-600 mb-2">{{ event.location }}</p>{% endif %}
+            {% if event.description %}<p class="text-gray-700 mb-2">{{ event.description }}</p>{% endif %}
+            {% if event.register_url or event.more_url %}
+            <div class="flex flex-wrap items-center gap-4 mt-3">
+              {% if event.register_url %}<a href="{{ event.register_url }}" class="inline-block bg-accent hover:bg-accent-dark text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors" target="_blank" rel="noopener">Register Here &rarr;</a>{% endif %}
+              {% if event.more_url %}<a href="{{ event.more_url }}" class="text-brand hover:text-brand-dark font-semibold transition-colors" target="_blank" rel="noopener">More Information &rarr;</a>{% endif %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="text-center text-gray-500">No upcoming events right now. Check back soon!</p>
+    {% endif %}
+
+    <div class="text-center mt-10">
+      <a href="https://www.mobilize.us/indivisiblecarsoncity/" class="text-brand hover:text-brand-dark font-semibold transition-colors" target="_blank" rel="noopener">Find more events on Mobilize &rarr;</a>
     </div>
   </div>
 </section>
-<script src="{{ '/assets/js/events.js' | relative_url }}"></script>
-<script>loadMobilizeEvents('events-list', 6);</script>
