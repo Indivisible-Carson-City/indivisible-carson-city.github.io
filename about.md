@@ -37,7 +37,7 @@ Have a special area of interest? INVCC has ten teams working together to defend 
 
 **Partnerships:** Help identify and contact partner organizations and businesses to build a progressive resource network. Work on our directory or call and connect people, organizations, and work groups.
 
-**Primary:** Develop INVCC Primary Program for the 2026 Midterms, write candidate questionnaires, identify education and outreach activities, coordinate actions to encourage strong voter participation in the 2026 midterm elections.
+**Get Out The Vote:** This midterm is crucially important to stopping the Trump Agenda. Want to help turn the tide in this nation and flip a seat in Congress? Want to make sure state government isn't taken over by Trump-endorsed electeds? Put in some elbow grease from now to November 3 and help make history. We need significantly large numbers of Democratic and nonpartisan voters who will cast their ballots for candidates that have Nevadans' best interests at heart. That requires large numbers of our followers to jump in and enliven voters to create the wave. Whether novice or experienced, join us as we roll out our GOTV strategy and train for the three most effective ways to reach voters. If you're not certain of your interest, join us to find out what it's all about. If you're experienced and want to help lead, now is the time to jump in!
 
 **Rallies:** Organize and coordinate rallies together with Admin, Security and Communications Teams. Draft petitions to representatives. Assist with tabling and sign-ups, talk about organization mission and needs. We need 6-10 people to assist this team with our bi-weekly rallies.
 

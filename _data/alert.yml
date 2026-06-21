@@ -3,7 +3,7 @@
 # expires: date after which the banner auto-hides (YYYY-MM-DD). Remove to show indefinitely.
 
 enabled: true
-expires: 2026-06-09
-text: "Indivisible Carson City recommends Kathy Durham and Teresa Benitez-Thompson for Congressional District 02."
-link:
-link_text:
+expires: 2026-11-03
+text: "Want to help flip a seat in Congress and keep state government out of the hands of Trump-endorsed candidates? Join us as we roll out our GOTV strategy and train on the three most effective ways to reach voters. Let's make history together."
+link: "mailto:indivisiblecarsoncity@gmail.com?subject=I%20want%20to%20help%20GOTV!"
+link_text: "I want to help GOTV!"
