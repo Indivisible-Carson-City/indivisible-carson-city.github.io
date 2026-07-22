@@ -1,4 +1,42 @@
 ---
+- title: 'GOTV: Knock on Doors in Carson City'
+  iso_date: '2026-07-22'
+  iso_end:
+  date_display: Wed, July 22
+  end_display:
+  time_display: 4:30 pm – 5:30 pm
+  location: 'Meet at Mills Park West End: Near Aquatic Center'
+  description: Join us and other volunteers to knock on doors and talk with voters
+    in Carson City! Let's build the grassroots power Democrats need to win in 2026
+    and to defend democracy long term.
+  register_url: https://www.mobilize.us/indivisiblecarsoncity/event/981360/
+  more_url:
+- title: 'GOTV: Knock on Doors in Carson City'
+  iso_date: '2026-07-25'
+  iso_end:
+  date_display: Sat, July 25
+  end_display:
+  time_display: 9:30 am – 10:30 am
+  location: Public Sidewalk @ Legislative Plaza. Table will be at the Special Solidarity
+    Saturday event.
+  description: Join us and other volunteers to knock on doors and talk with voters
+    in Carson City! Let's build the grassroots power Democrats need to win in 2026
+    and to defend democracy long term.
+  register_url: https://www.mobilize.us/indivisiblecarsoncity/event/981619/
+  more_url:
+- title: Special Solidarity Saturday
+  iso_date: '2026-07-25'
+  iso_end:
+  date_display: Sat, July 25
+  end_display:
+  time_display: 9:00 am – 11:00 am
+  location: Public Sidewalk @ Legislative Plaza
+  description: 'Indivisible Carson City invites the community to a vigil and rally
+    honoring eight people killed by ICE agents: Joan Sebastian Guerrero, Lorenzo Salgado
+    Araujo, Keith Porter, Renee Good, Alex Pretti, Silverio Villegas González, and
+    Ruben Ray Martinez.'
+  register_url: https://www.mobilize.us/mobilize/event/990263/
+  more_url:
 - title: 'INVCC Membership Meeting: July'
   iso_date: '2026-07-28'
   iso_end:
@@ -6,8 +44,9 @@
   end_display:
   time_display: 6:00 pm – 7:30 pm
   location: Details with Registration
-  description:
-  register_url:
+  description: Come and hear about the ways you can get involved in the upcoming election
+    season.
+  register_url: https://secure.ngpvan.com/QVeXn60jvkycW1cydXALVg2
   more_url:
 - title: 'INVCC Membership Meeting: Sierra Club Toiyabe Chapter'
   iso_date: '2026-08-25'
