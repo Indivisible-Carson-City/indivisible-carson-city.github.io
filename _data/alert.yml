@@ -3,7 +3,7 @@
 # expires: date after which the banner auto-hides (YYYY-MM-DD). Remove to show indefinitely.
 
 enabled: true
-expires: 2026-07-25
-text: "Join us this Saturday, July 25 for a Special Solidarity Saturday rally and vigil, 9:00–11:00 am at the Legislative Plaza sidewalk."
-link: "https://www.mobilize.us/mobilize/event/990263/"
-link_text: "RSVP on Mobilize"
+expires: 2026-08-31
+text: "Double your impact! Now through August 31, every dollar raised online is matched dollar for dollar, up to a maximum of $500."
+link: "/donate/"
+link_text: "Donate now"
