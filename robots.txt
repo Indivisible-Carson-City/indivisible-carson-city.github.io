@@ -1,4 +1,13 @@
+---
+layout: null
+---
+{%- if jekyll.environment == "production" -%}
 User-agent: *
 Allow: /
 
-Sitemap: https://indivisiblecarsoncity.org/sitemap.xml
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml
+{%- else -%}
+# Non-production build — do not index.
+User-agent: *
+Disallow: /
+{%- endif %}

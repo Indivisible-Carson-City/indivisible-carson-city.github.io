@@ -1,0 +1,85 @@
+{% comment %}
+  Renders a candidate comparison from _data/races/<key>.yml.
+  Usage: {% include candidate_comparison.html race=site.data.races.cd2 %}
+
+  Background rows and position rows are authored separately in the data file but render as one
+  continuous table: a single sticky column header sits above every row, and each cell carries a
+  party-coloured left spine, so a column stays traceable to its candidate down the whole page.
+  Position rows are distinguished by their stance chips rather than by a section break.
+
+  Cell shapes (see the data files):
+    text: "..."                      single paragraph
+    paragraphs: [ ... ]              multiple paragraphs
+    groups: [{stance:, items: []}]   one or more stance-labelled bullet lists
+    stance: Supports|Opposes|Abstaining|Concerned|Partial Support   optional, renders as a chip
+  A cell with none of the above renders the "no position identified" placeholder.
+{% endcomment %}
+
+{% assign race = include.race %}
+{% assign all_rows = race.background | concat: race.positions %}
+
+<div class="max-w-6xl mx-auto px-4">
+
+  {%- comment -%}
+    Who's being compared. Mobile only: cells stack there, so a two-column header would not
+    line up with anything. On desktop the sticky column header below carries this instead.
+  {%- endcomment -%}
+  <div class="md:hidden grid grid-cols-2 gap-4 mb-10">
+    {% for cand in race.candidates %}
+    <div class="border-t-4 pt-3 {% if cand.party == 'D' %}border-blue-700{% else %}border-red-700{% endif %}">
+      <p class="font-heading font-bold text-lg leading-tight">{{ cand.name }}</p>
+      <p class="text-sm text-gray-500">{{ cand.party_label }}</p>
+      {%- if race.endorsed and race.endorsed == cand.key %}
+      <span class="mt-2 inline-block bg-accent text-white text-[10px] font-semibold uppercase tracking-wide px-2 py-1 rounded">Indivisible endorsed</span>
+      {%- endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+  {%- comment -%} Single column header for the whole table. {%- endcomment -%}
+  <div class="hidden md:block sticky top-0 z-20 bg-white border-b-2 border-gray-300 py-3 shadow-sm">
+    <div class="grid grid-cols-2">
+      {% for cand in race.candidates %}
+      <div class="pl-4 border-l-4 {% if cand.party == 'D' %}border-l-blue-600{% else %}border-l-red-600{% endif %}">
+        <p class="font-heading font-bold text-xl lg:text-2xl leading-tight {% if cand.party == 'D' %}text-blue-700{% else %}text-red-700{% endif %}">{{ cand.name }}</p>
+        <p class="text-sm text-gray-500">
+          {{ cand.party_label }}
+          {%- if race.endorsed and race.endorsed == cand.key %}
+          <span class="ml-1 inline-block align-middle bg-accent text-white text-[10px] font-semibold uppercase tracking-wide px-1.5 py-0.5 rounded">Indivisible endorsed</span>
+          {%- endif %}
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="space-y-4 mt-4">
+    {% for row in all_rows %}
+    <div class="rounded-xl border border-gray-200 overflow-hidden">
+      <div class="border-b border-gray-200 px-4 py-2.5" style="background-color: #eff5fb;">
+        <h3 class="font-heading font-bold text-base md:text-lg text-brand">{{ row.label | default: row.issue }}</h3>
+      </div>
+      <div class="grid md:grid-cols-2">
+        {% for cell in row.cells %}
+        {% assign cand = race.candidates[forloop.index0] %}
+        <div class="p-4 border-l-4 {% if cand.party == 'D' %}border-l-blue-600{% else %}border-l-red-600{% endif %}{% unless forloop.last %} border-b border-b-gray-200 md:border-b-0{% endunless %}">
+          <p class="md:hidden text-xs font-semibold uppercase tracking-wide mb-1 {% if cand.party == 'D' %}text-blue-700{% else %}text-red-700{% endif %}">{{ cand.name }}</p>
+          {% include comparison_cell.html cell=cell %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if race.sources %}
+  <div class="mt-12 rounded-xl bg-gray-50 border border-gray-200 border-l-4 border-l-accent p-5">
+    <h2 class="font-heading font-bold text-sm uppercase tracking-wide text-gray-700 mb-2">Sources &amp; Methodology</h2>
+    <p class="text-sm text-gray-600 leading-relaxed">{{ race.sources }}</p>
+  </div>
+  {% endif %}
+
+  <div class="mt-8">
+    <a href="{{ '/vote/' | relative_url }}" class="text-brand hover:text-accent font-semibold transition-colors">&larr; Back to 2026 Election</a>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+{% comment %}
+  Renders one candidate's cell in a comparison row. See candidate_comparison.html for shapes.
+  Stance chips are colour-coded by position taken, not by endorsement:
+    Supports = emerald, Opposes = rose, Concerned / Partial Support = amber, Abstaining = slate.
+{% endcomment %}
+
+{% assign cell = include.cell %}
+
+{% if cell.groups %}
+  {%- comment -%} Multiple stance-labelled bullet lists in one cell. {%- endcomment -%}
+  <div class="space-y-3">
+    {% for group in cell.groups %}
+    <div>
+      {% if group.stance %}
+        {% include stance_chip.html stance=group.stance %}
+      {% endif %}
+      <ul class="mt-2 ml-4 list-disc space-y-1 text-gray-700 leading-relaxed">
+        {% for item in group.items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+
+{% elsif cell.paragraphs %}
+  <div class="space-y-2 text-gray-700 leading-relaxed">
+    {% for para in cell.paragraphs %}
+    <p>{% if forloop.first and cell.stance %}{% include stance_chip.html stance=cell.stance %} {% endif %}{{ para }}</p>
+    {% endfor %}
+  </div>
+
+{% elsif cell.text %}
+  <p class="text-gray-700 leading-relaxed">{% if cell.stance %}{% include stance_chip.html stance=cell.stance %} {% endif %}{{ cell.text }}</p>
+
+{% elsif cell.stance %}
+  {%- comment -%} Stance recorded but no explanatory text. {%- endcomment -%}
+  {% include stance_chip.html stance=cell.stance %}
+
+{% else %}
+  <p class="text-gray-400 italic text-sm">No public position identified.</p>
+{% endif %}

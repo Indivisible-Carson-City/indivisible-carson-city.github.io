@@ -1,0 +1,55 @@
+# /vote page — endorsement panel, voter resources, and candidate comparison cards.
+# To hide the whole section from the homepage and nav, set enabled: false.
+# expires: date after which the section auto-hides (YYYY-MM-DD). Remove to show indefinitely.
+
+enabled: true
+expires: 2026-11-04
+
+heading: "2026 Election"
+intro: >-
+  Where Indivisible Carson City stands, how the candidates compare, and everything you need to cast
+  your ballot.
+
+endorsement:
+  heading: "Indivisible Endorsement"
+  # Short excerpt shown in the blue panel. Full text lives on /vote/endorsement.
+  excerpt: >-
+    After a membership vote, Indivisible Carson City has endorsed **Teresa Benitez-Thompson** in her
+    campaign to represent Nevada's 2nd Congressional District, in what organizers call a critical race
+    for the district. Indivisible groups across Nevada have also endorsed Benitez-Thompson or are
+    supporting that endorsement.
+  quote: >-
+    We believe she will carry those values to Washington.
+  quote_attribution: "Kelly Bennett Unger, Indivisible Carson City Leader"
+  link: /vote/endorsement/
+  link_text: "Read the full statement"
+
+resources:
+  heading: "Resources"
+  groups:
+    - label: "Statewide"
+      links:
+        - text: "Register to vote or update your registration"
+          url: "https://registertovote.nv.gov/"
+        - text: "Check your voter registration status"
+          url: "https://www.nvsos.gov/votersearch/"
+        - text: "Early voting information"
+          url: "https://www.nvsos.gov/sos/elections/voters/early-voting-information"
+        - text: "2026 polling places & mail ballot drop boxes"
+          url: "https://www.nvsos.gov/elections/election-information/2026-election-information/2026-polling-locations"
+    - label: "Carson City"
+      links:
+        - text: "Elections Department"
+          url: "https://www.carsoncity.gov/government/departments-a-f/clerk-recorder/elections-department"
+
+comparisons:
+  heading: "Candidate Comparisons"
+  cards:
+    - race: cd2
+      title: "Congressional District 2"
+      subtitle: "Benitez-Thompson vs. Flippo"
+      url: /vote/cd2/
+    - race: governor
+      title: "Nevada Governor"
+      subtitle: "Ford vs. Lombardo"
+      url: /vote/governor/

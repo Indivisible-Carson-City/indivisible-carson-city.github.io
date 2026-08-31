@@ -1,0 +1,12 @@
+{%- comment -%}
+  A single stance chip. Rendered inline so it reads as the leading verb of the sentence
+  that follows it (e.g. "[Supports] the Affordable Care Act, ...").
+{%- endcomment -%}
+{%- case include.stance -%}
+  {%- when 'Supports' -%}{%- assign chip = 'bg-emerald-100 text-emerald-800 ring-emerald-600/20' -%}
+  {%- when 'Opposes' -%}{%- assign chip = 'bg-rose-100 text-rose-800 ring-rose-600/20' -%}
+  {%- when 'Concerned' -%}{%- assign chip = 'bg-amber-100 text-amber-800 ring-amber-600/20' -%}
+  {%- when 'Partial Support' -%}{%- assign chip = 'bg-amber-100 text-amber-800 ring-amber-600/20' -%}
+  {%- else -%}{%- assign chip = 'bg-slate-100 text-slate-700 ring-slate-500/20' -%}
+{%- endcase -%}
+<span class="inline-block align-baseline text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded ring-1 ring-inset {{ chip }}">{{ include.stance }}</span>

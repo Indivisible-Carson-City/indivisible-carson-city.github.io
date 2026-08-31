@@ -1,0 +1,249 @@
+# Nevada Governor candidate comparison — source: Nevada_Governor_2026_Candidate_Comparison.docx (Aug 2026)
+# Rendered by _includes/candidate_comparison.html via /vote/governor.
+# Column order flipped from the source doc so the Democrat appears first, matching the CD2 page.
+
+title: "Nevada Governor"
+race: "Governor of Nevada"
+blurb: "How the two candidates for Governor of Nevada compare on background and on the issues."
+endorsed:
+
+candidates:
+  - key: ford
+    name: "Aaron Ford"
+    party: D
+    party_label: Democrat
+  - key: lombardo
+    name: "Joe Lombardo"
+    party: R
+    party_label: Republican
+
+background_heading: "Qualifications, Background & General Info"
+background:
+  - label: Residency
+    cells:
+      - text: "Has lived in Nevada for 26 years."
+      - text: "Has lived in Nevada for 50 years."
+
+  - label: Career
+    cells:
+      - paragraphs:
+          - >-
+            Current Nevada Attorney General, first elected in 2018 and reelected in 2022; his term ends
+            January 2027.
+          - >-
+            Served in the Nevada State Senate from 2013–2019, including as Senate Majority Leader
+            (2017–2019).
+      - paragraphs:
+          - "Incumbent Governor of Nevada, first elected in 2022; running for a second term."
+          - >-
+            Served 8 years as Sheriff of Clark County (2015–2023), capping a 34-year law enforcement
+            career, including 26 years with the Las Vegas Metropolitan Police Department.
+          - "Served in the Nevada Army National Guard and U.S. Army Reserve, 1980–1986."
+
+  - label: Education
+    cells:
+      - text: >-
+          Earned five academic degrees, including a Bachelor's degree from Texas A&M University, a
+          Master's degree from George Washington University, and three degrees from The Ohio State
+          University encompassing a law degree and a Ph.D.
+      - text: "Holds a BS and MS from the University of Nevada, Las Vegas."
+
+  - label: Endorsed By
+    cells:
+      - text: >-
+          Nevada State AFL-CIO, AFSCME, SEIU Local 1107, UAW, several building trades unions
+          (Bricklayers Local 13, Ironworkers Local 433, IUOE, IUPAT), Nevada State Education
+          Association, Washoe Education Association, Planned Parenthood Action Fund, Reproductive
+          Freedom for All, Moms Demand Action, End Citizens United, and Nevada Conservation League.
+      - text: >-
+          Vegas Chamber, Nevada Realtors, Associated Builders and Contractors Nevada, Nevada Trucking
+          Association, Armed Forces Chamber, Turning Point Action, NVGOP, Nevada Right to Life,
+          Professional Firefighters of Nevada, Clark County Education Association, and several
+          police/sheriff associations.
+
+  - label: Personal financial disclosure
+    cells:
+      - text: "Disclosure filed and is available on www.nvsos.gov"
+      - text: "Disclosure filed and is available on www.nvsos.gov"
+
+positions_heading: "Campaign Positions"
+positions:
+  - issue: "Corporate Tax Breaks & Abatements"
+    cells:
+      - stance: Concerned
+        text: >-
+          Has expressed that the state needs to reevaluate corporate tax abatements and ensure large
+          incoming industries, such as major data centers, pay a fair share for utility and resource
+          impacts.
+      - stance: Supports
+        text: >-
+          Views them as vital tools to diversify the state's economy, attract high-tech and clean
+          energy businesses, and lower the Modified Business Tax.
+
+  - issue: "Tariffs"
+    cells:
+      - stance: Opposes
+        text: >-
+          He has actively opposed them, calling the tariffs illegal and urging the federal government
+          to end them.
+      - stance: Abstaining
+        text: >-
+          Has largely remained silent and avoided publicly endorsing or pushing back against broad
+          federal tariffs.
+
+  - issue: "SAVE Act / Elections & Voting"
+    cells:
+      - stance: Opposes
+        text: >-
+          He said there's not enough evidence that voter fraud exists in the state to justify imposing
+          a new requirement to exercise the right to vote. He said there would have to be a compelling
+          reason to add identification requirements to the state's voting process.
+      - stance: Supports
+        text: >-
+          Says he "wholeheartedly" supports voter ID, but vetoed a 2025 voter ID bill (AB499), saying
+          it applied ID rules unevenly between in-person and mail voters. Also vetoed a bill (AB105)
+          banning firearms at or near polling places, saying existing law already addresses voter
+          intimidation.
+
+  - issue: "Climate, Energy & Public Lands"
+    cells:
+      - stance: Supports
+        text: >-
+          Prioritizes clean, affordable energy. Has fought NV Energy's mandatory demand charge as
+          Attorney General and says he would require data centers to pay their fair share for added
+          energy demand and to commit to water conservation, while promoting residential solar and
+          efficiency incentives.
+      - stance: Opposes
+        text: >-
+          Points to work with the Trump administration to release federal land for housing and says he
+          has "stood up for Nevadans against California's extreme energy policies," per his campaign
+          material.
+
+  - issue: "Data Centers Providing Their Own Power"
+    cells:
+      - stance: Supports
+        text: >-
+          He will not allow data centers to raise costs on Nevadans. "Not only does he support a law
+          requiring data centers to provide their own power — he plans to introduce legislation to do
+          so," the campaign wrote in a statement.
+      - stance: Abstaining
+        text: >-
+          Did not give a direct yes or no answer but said that the state already has strong measures in
+          place to shield ratepayers from burdening the costs associated with data centers.
+
+  - issue: "Public Safety & Criminal Justice"
+    cells:
+      - text: >-
+          As Attorney General, has prosecuted human trafficking cases. Has been criticized by
+          Republicans as "soft on crime" for supporting a higher felony theft threshold; disputes that
+          characterization.
+      - text: >-
+          Delivered double-digit pay raises for law enforcement. Cites a 10% drop in violent crime
+          during his term (murders -9%, robberies -26%, burglaries -15%). Increased penalties for drug
+          and fentanyl trafficking and vetoed bills he characterized as "soft on crime."
+
+  - issue: "Reproductive Rights"
+    cells:
+      - stance: Supports
+        text: >-
+          He is going to "ensure that Nevada itself remains a firewall, not just in name, but in
+          practice … that means protecting abortion access, safeguarding IVF, keeping politicians out
+          of private medical decisions."
+      - stance: Abstaining
+        text: >-
+          Describes himself as personally "pro-life," said he would respect Nevada's existing law
+          permitting abortion up to 24 weeks. In 2022 said he would support a ballot measure letting
+          voters decide on a 13-week abortion ban and other restrictions such as parental notification.
+
+  - issue: "Iran War"
+    cells:
+      - stance: Opposes
+        text: >-
+          Strongly criticizes the conflict and blames it for driving up inflation and spiking gas and
+          grocery prices for families.
+      - stance: Supports
+        text: >-
+          Wrote a letter supporting Trump's new budget bill to add another $70 billion towards the Iran
+          War.
+
+  - issue: "ICE Tactics"
+    cells:
+      - stance: Opposes
+        text: >-
+          Issued nonbinding "model immigration policies" guidance encouraging state agencies, schools,
+          and hospitals not to use local resources for civil immigration enforcement.
+      - stance: Supports
+        text: >-
+          Says Nevada will "continue to follow federal law" and has disputed his administration's own
+          model immigration guidance, saying the Attorney General cannot make Nevada a "sanctuary
+          jurisdiction."
+
+  - issue: "Gun Safety"
+    cells:
+      - stance: Supports
+        text: >-
+          As Attorney General, defended the state's ghost-gun regulation in court (Sisolak v.
+          Polymer80) and promoted Extreme Risk Protection Order ("red flag law") training for law
+          enforcement. Oversaw enforcement of universal background checks and, as Senate Majority
+          Leader, helped pass 2019 gun-safety legislation.
+      - stance: Opposes
+        text: >-
+          Says he will veto any legislation restricting the right to keep and bear arms. Worked to end
+          Clark County's firearm registry in 2015 and supports the right to build a firearm for
+          personal use. Vetoed multiple gun-safety bills passed by the Legislature, including bans on
+          guns at polling places and raising the purchase age for semiautomatic firearms to 21.
+
+  - issue: "Housing — Should Nevada limit corporations buying homes?"
+    cells:
+      - stance: Supports
+        text: >-
+          Said he will "limit corporate investors buying single family homes and crack down on
+          predatory landlords." Wants to crack down on Wall Street/institutional investors buying up
+          single-family homes, push back on tariffs that raise construction costs, and ease permitting
+          to encourage new construction on vacant land.
+      - stance: Abstaining
+        text: >-
+          Did not give a direct yes or no answer. Lombardo vetoed a bill to cap corporate ownership in
+          2023, then reportedly blocked a 2025 effort that would have imposed even stricter limits.
+
+  - issue: "Healthcare"
+    cells:
+      - text: >-
+          As Attorney General, won more than $1.2 billion in opioid settlements. As governor, would
+          target Pharmacy Benefit Manager practices that he says withhold drug-price savings from
+          consumers, pursue a medical debt relief program, and expand access to the state's public
+          option, Battle Born State Plans.
+      - text: >-
+          Created the Nevada Health Authority, consolidating Medicaid, the ACA marketplace, and public
+          employee benefits. Supported a new stand-alone children's hospital in Las Vegas. Expanded
+          community behavioral health centers and the statewide 988 crisis system.
+
+  - issue: "Increase K-12 Funding"
+    cells:
+      - stance: Supports
+        text: >-
+          Wants to increase education funding to raise the state's per-pupil spending to the national
+          average — a roughly $2 billion expenditure — but is not open to adding new taxes.
+      - stance: Abstaining
+        text: >-
+          Did not give a direct yes or no answer. Lombardo has not made this an explicit goal, and in
+          the past has said he's against new taxes. He didn't answer whether he supported further
+          increasing education funding for the next two years.
+
+  - issue: "Jobs, the Economy & Cost of Living"
+    cells:
+      - text: >-
+          Campaign says Nevada has one of the highest unemployment rates in the country and that Las
+          Vegas tourism has fallen amid Trump-era tariffs. Frames his platform around lowering costs
+          for working families and expanding economic opportunity.
+      - text: >-
+          Cites a 4.3% increase in employment since 2022, more than $5 billion in new economic
+          investment, and a 15% cut to the Modified Business Tax rate. Cut or streamlined more than 900
+          state regulations.
+
+sources: >-
+  Candidates' official campaign websites (joelombardofornv.com, fordfornevada.com), the Nevada
+  Governor's Office, and nonpartisan news coverage (The Nevada Independent, Associated Press,
+  Ballotpedia). Compiled August 2026; candidate positions may be updated or clarified as the campaign
+  continues. Blank or limited entries reflect that no public position was identified in available
+  sources as of this date.
