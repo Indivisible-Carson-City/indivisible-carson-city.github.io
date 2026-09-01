@@ -41,6 +41,10 @@ resources:
       links:
         - text: "Elections Department"
           url: "https://www.carsoncity.gov/government/departments-a-f/clerk-recorder/elections-department"
+    - label: "More candidate comparisons"
+      links:
+        - text: "Vote411 — nonpartisan candidate guide from the League of Women Voters"
+          url: "https://www.vote411.org/"
 
 comparisons:
   heading: "Candidate Comparisons"
