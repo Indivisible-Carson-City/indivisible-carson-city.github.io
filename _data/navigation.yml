@@ -8,5 +8,7 @@
   url: /gallery
 - title: Blog
   url: /blog
+- title: Vote
+  url: /vote/
 - title: Donate
   url: /donate

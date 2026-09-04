@@ -1,6 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {% seo %}
+{% if jekyll.environment == "production" %}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MM6XZ9FB5"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -8,6 +9,13 @@
   gtag('js', new Date());
   gtag('config', 'G-8MM6XZ9FB5');
 </script>
+{% else %}
+{%- comment -%}
+  Non-production build (local dev, bin/preview tunnel): no analytics, and keep it out of search
+  indexes in case the build is served from a public preview URL.
+{%- endcomment -%}
+<meta name="robots" content="noindex, nofollow">
+{% endif %}
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {

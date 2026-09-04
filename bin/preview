@@ -1,0 +1,112 @@
+#!/usr/bin/env bash
+# Share the local Jekyll site with stakeholders over a temporary Cloudflare tunnel.
+#
+#   bin/preview start    build + serve + open a public URL (prints the link)
+#   bin/preview url      reprint the current link
+#   bin/preview stop     tear everything down
+#   bin/preview rotate   get a fresh URL without restarting Jekyll
+#   bin/preview attach   watch the logs (detach again with Ctrl-b then d)
+#
+# Everything runs inside one tmux session, so it survives closing the terminal.
+# It does NOT survive the laptop sleeping — `caffeinate` below holds sleep off
+# while the session runs, but keep the machine plugged in and the lid open.
+# The URL is regenerated on every `start`.
+
+set -euo pipefail
+
+SESSION="icc-preview"
+PORT="${PORT:-4000}"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+LOG="$ROOT/tmp/preview-tunnel.log"
+
+have() { command -v "$1" >/dev/null 2>&1; }
+
+# Cloudflare builds quick-tunnel hostnames from random dictionary words, which
+# occasionally land on something you would not want to paste into an email.
+BLOCKLIST="dick|cock|crap|damn|hell|butt|arse|piss|slut|nazi|kill|died|dead|sex|anal|porn"
+
+acceptable() { ! printf '%s' "$1" | grep -qiE "$BLOCKLIST"; }
+
+spawn_tunnel() {
+  : > "$LOG"
+  tmux kill-window -t "$SESSION:tunnel" 2>/dev/null || true
+  tmux new-window -t "$SESSION" -n tunnel \
+    "cd '$ROOT'; cloudflared tunnel --url http://127.0.0.1:$PORT 2>&1 | tee '$LOG'; read -r"
+  for _ in $(seq 1 40); do
+    grep -qoE 'https://[a-z0-9-]+\.trycloudflare\.com' "$LOG" 2>/dev/null && return 0
+    sleep 1
+  done
+  return 1
+}
+
+current_url() { grep -oE 'https://[a-z0-9-]+\.trycloudflare\.com' "$LOG" 2>/dev/null | head -1; }
+
+rotate() {
+  tmux has-session -t "$SESSION" 2>/dev/null || { echo "Not running. Use: bin/preview start" >&2; exit 1; }
+  local u
+  for attempt in 1 2 3 4 5 6; do
+    printf 'Requesting a new URL (attempt %s)...\n' "$attempt"
+    spawn_tunnel || continue
+    u="$(current_url)"
+    if [ -n "$u" ] && acceptable "$u"; then url; return 0; fi
+    echo "  got an awkward name, retrying"
+  done
+  echo "Gave up after 6 tries; last URL was: $(current_url)" >&2
+  return 1
+}
+
+for dep in tmux cloudflared; do
+  have "$dep" || { echo "error: $dep is not installed. Run: brew install tmux cloudflared" >&2; exit 1; }
+done
+
+start() {
+  if tmux has-session -t "$SESSION" 2>/dev/null; then
+    echo "Already running."; url; exit 0
+  fi
+
+  mkdir -p "$(dirname "$LOG")"; : > "$LOG"
+
+  # jekyll needs rbenv on PATH inside a non-login tmux shell
+  local boot="eval \"\$(rbenv init - bash)\" 2>/dev/null || true; cd '$ROOT'"
+
+  tmux new-session -d -s "$SESSION" -n jekyll \
+    "$boot; caffeinate -s bundle exec jekyll serve --future --host 127.0.0.1 --port $PORT; read -r"
+  tmux new-window -t "$SESSION" -n tunnel \
+    "cd '$ROOT'; cloudflared tunnel --url http://127.0.0.1:$PORT 2>&1 | tee '$LOG'; read -r"
+
+  printf 'Starting'
+  for _ in $(seq 1 40); do
+    if grep -qoE 'https://[a-z0-9-]+\.trycloudflare\.com' "$LOG" 2>/dev/null; then break; fi
+    printf '.'; sleep 1
+  done
+  echo
+  url
+}
+
+url() {
+  local u
+  u="$(grep -oE 'https://[a-z0-9-]+\.trycloudflare\.com' "$LOG" 2>/dev/null | head -1 || true)"
+  if [ -n "$u" ]; then
+    echo "Share this link:  $u"
+    echo "Vote page:        $u/vote/"
+    echo
+    echo "Stop when done:   bin/preview stop"
+  else
+    echo "No URL yet. Check the logs with: bin/preview attach" >&2
+    return 1
+  fi
+}
+
+stop() {
+  tmux kill-session -t "$SESSION" 2>/dev/null && echo "Stopped." || echo "Not running."
+  pkill -f "jekyll serve" 2>/dev/null || true
+}
+
+case "${1:-start}" in
+  start)  start ;;
+  url)    url ;;
+  stop)   stop ;;
+  rotate) rotate ;;
+  attach) tmux attach -t "$SESSION" ;;
+  *) echo "usage: bin/preview {start|url|rotate|stop|attach}" >&2; exit 1 ;;
+esac

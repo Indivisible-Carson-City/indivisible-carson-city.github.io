@@ -1,0 +1,18 @@
+---
+layout: default
+title: Nevada Governor — Candidate Comparison
+permalink: /vote/governor/
+description: "Side-by-side comparison of Aaron Ford and Joe Lombardo, the 2026 candidates for Governor of Nevada, on background and 14 issues."
+---
+
+{% assign race = site.data.races.governor %}
+
+<div class="max-w-6xl mx-auto px-4 pt-12">
+  <p class="text-sm text-gray-500 mb-2"><a href="{{ '/vote/' | relative_url }}" class="text-brand hover:text-brand-dark">2026 Election</a> &rsaquo; Candidate Comparison</p>
+  <h1 class="font-heading text-4xl md:text-5xl font-bold mb-2">{{ race.title }}</h1>
+  <p class="text-lg text-gray-600">{{ race.race }}</p>
+</div>
+
+<div class="py-8">
+  {% include candidate_comparison.html race=race %}
+</div>

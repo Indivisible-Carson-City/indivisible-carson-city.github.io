@@ -1,0 +1,84 @@
+---
+layout: default
+title: 2026 Election
+permalink: /vote/
+description: "Indivisible Carson City's 2026 endorsement, side-by-side candidate comparisons for Nevada's 2nd Congressional District and Governor, and Nevada voter registration and polling place resources."
+---
+
+{% assign v = site.data.vote %}
+
+<div class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+
+  <header class="mb-10">
+    <h1 class="font-heading text-4xl md:text-5xl font-bold mb-3">{{ v.heading }}</h1>
+    <p class="text-lg text-gray-600 max-w-2xl">{{ v.intro }}</p>
+  </header>
+
+  {%- comment -%} Endorsement banner. {%- endcomment -%}
+  <section class="rounded-3xl text-white p-7 md:p-10 border-t-4 border-accent shadow-lg" style="background-image: linear-gradient(135deg, #00417b 0%, #1a5c9e 55%, #2f77bd 100%);">
+    <div class="grid md:grid-cols-3 gap-8 items-start">
+      <div class="md:col-span-2">
+        <h2 class="font-heading text-2xl font-bold mb-3">{{ v.endorsement.heading }}</h2>
+        <div class="text-white/90 leading-relaxed space-y-3">{{ v.endorsement.excerpt | markdownify }}</div>
+      </div>
+      <div class="md:border-l md:border-white/25 md:pl-8">
+        {% if v.endorsement.quote %}
+        <blockquote>
+          <p class="italic text-white/90 leading-relaxed">&ldquo;{{ v.endorsement.quote }}&rdquo;</p>
+          <footer class="text-sm text-white/70 mt-2">&mdash; {{ v.endorsement.quote_attribution }}</footer>
+        </blockquote>
+        {% endif %}
+        {% if v.endorsement.link %}
+        <a href="{{ v.endorsement.link | relative_url }}" class="inline-block mt-5 bg-white text-brand hover:bg-gray-100 no-underline px-5 py-2 rounded-full text-sm font-semibold transition-colors">{{ v.endorsement.link_text }} &rarr;</a>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} Comparison cards. {%- endcomment -%}
+  <section class="mt-12">
+    <h2 class="font-heading text-2xl font-bold text-brand mb-5">{{ v.comparisons.heading }}</h2>
+    <div class="grid sm:grid-cols-2 gap-6">
+      {% for card in v.comparisons.cards %}
+      {% assign race = site.data.races[card.race] %}
+      <a href="{{ card.url | relative_url }}" class="group flex flex-col no-underline rounded-2xl overflow-hidden border-2 border-gray-200 hover:border-brand bg-white min-h-[12rem] shadow-sm hover:shadow-xl transition-all">
+        {%- comment -%} Split bar: one half per candidate, coloured by party. {%- endcomment -%}
+        <div class="flex h-2 w-full" aria-hidden="true">
+          {% for cand in race.candidates %}
+          <span class="flex-1 {% if cand.party == 'D' %}bg-blue-700{% else %}bg-red-700{% endif %}"></span>
+          {% endfor %}
+        </div>
+        <div class="flex flex-col justify-between flex-grow p-7">
+          <div>
+            <h3 class="font-heading text-2xl font-bold text-brand leading-tight mb-1">{{ card.title }}</h3>
+            <p class="text-gray-500">{{ card.subtitle }}</p>
+            {% if race.endorsed %}
+            <span class="inline-block mt-3 bg-accent text-white text-[10px] font-semibold uppercase tracking-wide px-2 py-1 rounded">Indivisible endorsed</span>
+            {% endif %}
+          </div>
+          <span class="mt-6 text-brand group-hover:text-accent font-semibold transition-colors">Click to view &rarr;</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  {%- comment -%} Voter resources. {%- endcomment -%}
+  <section class="mt-12 rounded-2xl border border-brand/15 border-l-4 border-l-accent p-7 md:p-8" style="background-color: #eff5fb;">
+    <h2 class="font-heading text-2xl font-bold text-brand mb-6">{{ v.resources.heading }}</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      {% for group in v.resources.groups %}
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand/60 mb-3">{{ group.label }}</p>
+        <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2 list-none m-0 p-0">
+          {% for link in group.links %}
+          <li>
+            <a href="{{ link.url }}" target="_blank" rel="noopener" class="text-brand hover:text-brand-dark underline decoration-brand/30 hover:decoration-brand underline-offset-2 transition-colors">{{ link.text }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</div>

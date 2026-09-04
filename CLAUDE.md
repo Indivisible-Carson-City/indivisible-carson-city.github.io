@@ -4,7 +4,13 @@
 ```bash
 eval "$(rbenv init - zsh)" && bundle exec jekyll serve --future   # Local dev server at localhost:4000
 eval "$(rbenv init - zsh)" && bundle exec jekyll build             # Build to _site/
+
+bin/preview start   # Share the local site publicly via a Cloudflare quick tunnel (prints the URL)
+bin/preview url     # Reprint the current share URL
+bin/preview stop    # Tear it down
 ```
+`bin/preview` runs Jekyll + cloudflared in one tmux session (`icc-preview`), so it survives closing
+the terminal — but not the laptop sleeping, and the URL changes on every `start`.
 
 ## Stack
 - **Jekyll 4.4** (not github-pages gem)
@@ -24,7 +30,8 @@ eval "$(rbenv init - zsh)" && bundle exec jekyll build             # Build to _s
 ## Key Files
 - `_plugins/events_sheet.rb` — fetches the events Google Sheet (published as CSV) at build time into `site.data.sheet_events`; tolerant parser (fuzzy headers, US M/D/YYYY dates, lowercase am/pm, optional end date, two link columns); caches to `_data/sheet_events_cache.yml` as fallback. Set `EVENTS_SHEET_CSV=/path/to.csv` to test against a local file without network.
 - `_plugins/substack_feed.rb` — fetches Substack via rss2json.com proxy at build time into `site.data.substack_posts`; caches to `_data/substack_cache.yml` as fallback
-- `assets/css/custom.css` — brand overrides on top of Tailwind
+- `assets/css/custom.css` — brand overrides on top of Tailwind (hand-rolled `.prose` rules; the Tailwind Typography plugin is NOT loaded, so `prose-*` modifier classes are no-ops)
+- `_includes/candidate_comparison.html` — renders a race from `_data/races/*.yml`; cells support `text`, `paragraphs`, or `groups`, plus an optional `stance` chip
 - `.github/workflows/jekyll.yml` — GitHub Actions deploy workflow (push + daily cron)
 
 ## Data Files
@@ -34,6 +41,8 @@ eval "$(rbenv init - zsh)" && bundle exec jekyll build             # Build to _s
 - `_data/substack_cache.yml` — cached Substack posts (auto-updated on build, fallback if fetch fails)
 - `_data/sheet_events_cache.yml` — cached events from the Google Sheet (auto-generated on build, fallback if fetch fails)
 - `_data/navigation.yml` — nav links
+- `_data/vote.yml` — /vote page: endorsement excerpt, voter resource links, comparison cards (supports `enabled` + `expires`)
+- `_data/races/cd2.yml`, `_data/races/governor.yml` — candidate comparison content (background rows + issue positions)
 
 ## Pages
 - Home (`/`) — alert banner, hero, spotlight, mission, events, photo gallery, CTA
@@ -42,6 +51,9 @@ eval "$(rbenv init - zsh)" && bundle exec jekyll build             # Build to _s
 - Gallery (`/gallery`) — event photos in reverse chronological order
 - Blog (`/blog`) — recent Substack posts (renamed from Newsletter; `/newsletter` redirects here)
 - Donate (`/donate`) — ActBlue donation link
+- Vote (`/vote`) — 2026 election hub: endorsement panel, voter resources, comparison cards
+- `/vote/cd2`, `/vote/governor` — side-by-side candidate comparisons
+- `/vote/endorsement` — full text of the CD2 endorsement statement
 
 ## Conventions
 - `future: true` is set in `_config.yml` so future-dated events render locally
@@ -50,6 +62,8 @@ eval "$(rbenv init - zsh)" && bundle exec jekyll build             # Build to _s
 - Gallery entries go at the **top** of `_data/gallery.yml` (newest first)
 - Homepage "In Action" section shows only the most recent gallery entry
 - Spotlight flyer images go in `assets/images/spotlight/`
+- `/vote` pages use trailing-slash permalinks so each emits its own `index.html` — a bare `/vote` permalink would collide with the `vote/` directory on GitHub Pages
+- Candidate comparisons list the Democrat first in both races, and each comparison page ends with a sources/methodology note
 - Event photos go in `assets/images/events/`
 - Substack feed is fetched via rss2json.com (free proxy) because Cloudflare blocks direct requests from GitHub Actions IPs
 - Blog posts update automatically on each daily build — no manual intervention needed

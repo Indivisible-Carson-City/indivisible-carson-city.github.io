@@ -1,9 +1,12 @@
 # Alert banner — shown at the top of the homepage
 # To update: change the text and link below. To hide, set enabled: false.
 # expires: date after which the banner auto-hides (YYYY-MM-DD). Remove to show indefinitely.
+#
+# Set to run through election day. The daily 8 AM UTC rebuild will hide it
+# automatically on 2026-11-04.
 
 enabled: true
-expires: 2026-08-31
-text: "Double your impact! Now through August 31, every dollar raised online is matched dollar for dollar, up to a maximum of $500."
-link: "/donate/"
-link_text: "Donate now"
+expires: 2026-11-03
+text: "Indivisible Carson City endorses Teresa Benitez-Thompson for Congressional District 2."
+link: /vote/
+link_text: "See the candidate comparison"

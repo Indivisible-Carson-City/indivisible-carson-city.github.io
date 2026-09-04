@@ -1,0 +1,270 @@
+# CD2 candidate comparison — source: NV_CD2_2026_Candidate_Comparison_Final.docx (Aug 2026)
+# Rendered by _includes/candidate_comparison.html via /vote/cd2.
+# Cell shapes: text (single paragraph) | paragraphs (list) | groups (stance + bullet items).
+
+title: "Congressional District 2"
+race: "U.S. House of Representatives — Nevada's 2nd Congressional District"
+blurb: "How the two candidates for Nevada's 2nd Congressional District compare on background and on the issues."
+endorsed: benitez-thompson
+
+candidates:
+  - key: benitez-thompson
+    name: "Teresa Benitez-Thompson"
+    party: D
+    party_label: Democrat
+  - key: flippo
+    name: "David Flippo"
+    party: R
+    party_label: Republican
+
+background_heading: "Qualifications, Background & General Info"
+background:
+  - label: Residency
+    cells:
+      - text: "40-year resident of Reno, NV."
+      - text: "4-month resident of Reno, NV. 12-year resident of Las Vegas, NV."
+
+  - label: Career
+    cells:
+      - text: >-
+          Professional background as a licensed social worker, including work in adoption placement
+          and hospice/palliative care. Former Nevada Assembly member representing District 27,
+          including three terms as Assembly Majority Leader. Renowned for the degree of research and
+          preparation on legislation. Most recently served as Chief of Staff for the Nevada Attorney
+          General.
+      - paragraphs:
+          - >-
+            Worked in preventive-maintenance program management for BP on Alaska's North Slope after
+            retiring from the Air Force as a Lieutenant Colonel after a 24-year military career.
+          - >-
+            Was an unsuccessful candidate for CD4 in 2024, was running again for CD4, then switched
+            to CD2 candidacy when Amodei announced retirement.
+
+  - label: Education
+    cells:
+      - text: >-
+          Bachelor's degree from the University of Nevada, Reno, and a master's in social work from
+          the University of Michigan.
+      - text: >-
+          Bachelor's degree from Montana State University and a master's degree in public
+          administration from Valdosta State University.
+
+  - label: Endorsed By
+    cells:
+      - text: >-
+          CHC BOLD PAC, Teamsters, PLAN Action, NOW National/NOW Nevada, IATSE, Northern Nevada
+          Central Labor Council, INVCC.
+      - text: >-
+          Trump, Gov. Lombardo (originally backed a different candidate during the primary), Rep. Paul
+          Gosar, Turning Point Action, National Right to Life/Nevada Right to Life, and campaign
+          co-chairs Robin Titus and PK O'Neill. Republicans Cong. Amodei and Sen. Titus have publicly
+          refused to endorse Flippo.
+
+  - label: Financial disclosure
+    cells:
+      - text: "Disclosure filed and is available on www.nvsos.gov"
+      - text: "Has not met the deadline to file disclosure."
+
+positions_heading: "Campaign Positions"
+positions:
+  - issue: "Campaign Finance & Government Ethics"
+    cells:
+      - stance: Supports
+        text: >-
+          overturning Citizens United, mandatory public financing of federal campaigns, mandatory
+          dark-money disclosure, and closing the lobbying "revolving door." Says she'll hold regular
+          town halls and publish her voting record.
+      - stance: Opposes
+        text: >-
+          taxpayer-funded political campaigns. Supports faster campaign-finance disclosure, tougher
+          enforcement against foreign money, a ban on members of Congress trading individual stocks,
+          stronger lobbyist-disclosure rules, and term limits. Supports a balanced budget amendment
+          while at the same time supporting increases in military spending.
+
+  - issue: "Taxes"
+    cells:
+      - stance: Supports
+        text: >-
+          billionaires and corporations paying a higher effective rate. Wants federal revenue directed
+          toward healthcare, education, and housing. Wants tax relief targeted at working families.
+      - stance: Opposes
+        text: >-
+          billionaires and corporations paying a higher effective rate. Called it a wealth-tax approach
+          that would deter investment. Has signed the Americans for Tax Reform "Taxpayer Protection
+          Pledge" against new taxes. Supports a simpler, flatter tax code and closing loopholes rather
+          than new taxes, paired with lower federal spending.
+
+  - issue: "Affordability & Cost of Living"
+    cells:
+      - stance: Supports
+        text: >-
+          restoring hundreds of millions of tax dollars stripped by the Department of Government
+          Efficiency (DOGE) that funded programs benefitting everyday Nevadans. Those funds instead
+          are now going to billionaires.
+      - stance: Supports
+        text: >-
+          cutting wasteful Washington spending to fight inflation. Wants to slash regulations and red
+          tape that drive up prices.
+
+  - issue: "Healthcare"
+    cells:
+      - stance: Supports
+        text: >-
+          the Affordable Care Act, ensuring Medicaid covers mental and behavioral health care, and
+          protecting reproductive freedom through federal legislation. Points to her state legislative
+          record supporting Nevada's public-option health plan and drug-price transparency measures.
+      - stance: Partial Support
+        text: >-
+          Medicare and Medicaid should remain available, but no other taxpayer-funded programs are
+          necessary.
+
+  - issue: "Iran War"
+    cells:
+      - stance: Opposes
+        text: >-
+          "We've picked a war with a country whose mineral, gas and oil reserves are enormous. Because
+          of the supply disruption, we have skyrocketed the value of those resources for Iran. They're
+          currently worth $27 trillion. We're strengthening our adversaries."
+      - stance: Supports
+        text: >-
+          "I fully support what President Trump is doing. We need to open up the strait, it needs to
+          be a clear waterway. We need the flow of oil to start again."
+
+  - issue: "SAVE Act / Elections & Voting"
+    cells:
+      - stance: Opposes
+        text: >-
+          the SAVE Act, calling it a barrier to voter access. Supports expanding mail and early voting,
+          automatic and same-day voter registration, redistricting reform, and campaign finance
+          disclosure. Opposes the Trump administration's cuts to federal election-security (CISA)
+          funding and staffing.
+      - stance: Supports
+        text: >-
+          the SAVE Act, which puts restrictions on who can vote, including proof-of-citizenship voter
+          registration, voter ID for federal elections, and cleaning up voter rolls. Says states should
+          run elections, with Congress protecting federal elections from fraud and foreign interference.
+
+  - issue: "Data Centers"
+    cells:
+      - stance: Opposes
+        text: >-
+          She opposes data centers on public land and wants audits of water and energy use. Says data
+          centers "need to be paying their own way in Nevada" and supports revisiting the tax
+          abatements Nevada approved in 2015, calling the current terms a "sweetheart deal" given how
+          much the industry has grown. Has raised concerns about the water and resource use of new
+          AI-scale data centers.
+      - stance: Supports
+        text: "As long as they do not increase Nevadans' utility costs."
+
+  - issue: "Social Security & Seniors"
+    cells:
+      - groups:
+          - stance: Opposes
+            items:
+              - "Cuts to Social Security or raising the eligibility age"
+          - stance: Supports
+            items:
+              - "Expanding benefits, especially for low-income seniors"
+              - "Strengthening Medicare"
+              - "Letting Medicare negotiate more drug prices, and capping out-of-pocket costs"
+              - "Expanded retirement savings options"
+              - "Accessible senior transit, particularly in rural areas"
+      - groups:
+          - stance: Opposes
+            items:
+              - "Cuts to Social Security and Medicare for current seniors and near-retirees"
+          - stance: Supports
+            items:
+              - "Eliminating federal taxes on Social Security benefits"
+              - "Expanded telehealth"
+              - "Believes competition will lower prescription drug costs"
+              - "Flexible rural transportation programs for seniors"
+
+  - issue: "Clean Energy & Climate Change"
+    cells:
+      - stance: Supports
+        text: >-
+          continued federal clean-energy funding, citing the Solar for All program in Nevada defunded
+          by the Trump administration. Also supports the development of solar and wind in Nevada.
+      - stance: Opposes
+        text: >-
+          Asserts that clean energy policies raise energy costs; supports streamlined permitting for
+          "responsible energy development" and reduced U.S. reliance on China for clean-energy
+          components. Supports federal investment in wildfire fuels reduction, water storage, and grid
+          reliability, describing this as "resilience" rather than climate policy.
+
+  - issue: "Tariffs"
+    cells:
+      - stance: Opposes
+        text: >-
+          She actively criticizes Donald Trump's economic policies, arguing that tariffs and related
+          proposals drive up costs and hurt working families.
+      - stance: Supports
+        text: >-
+          He has stated that he backs the tariffs as a practical tool to help bring manufacturing jobs
+          back to the United States.
+
+  - issue: "ICE Tactics"
+    cells:
+      - stance: Opposes
+        text: >-
+          Campaign site calls for "a reformed immigration system that works, not federal agents pulling
+          families apart," and has criticized recent immigration enforcement actions in Nevada
+          communities.
+      - stance: Supports
+        text: >-
+          Lists illegal immigration among his top concerns and supports increased federal enforcement
+          and border security, as well as deportation of "illegal aliens."
+
+  - issue: "Public Lands"
+    cells:
+      - groups:
+          - stance: Opposes
+            items:
+              - "Large-scale federal public land sales in Nevada"
+          - stance: Supports
+            items:
+              - >-
+                Continued federal funding for wildfire and land-management agencies (U.S. Forest
+                Service, BLM, FEMA) and restoring cuts to federal firefighting capacity
+      - stance: Supports
+        text: >-
+          the release and transfer of federal Bureau of Land Management (BLM) lands to local
+          jurisdictions to promote attainable housing and economic growth.
+
+  - issue: "Reproductive Health"
+    cells:
+      - stance: Supports
+        text: >-
+          protecting reproductive freedom through federal legislation. Has a state legislative record
+          eliminating out-of-pocket costs for contraception.
+      - stance: Opposes
+        text: >-
+          Endorsed by National Right to Life and Nevada Right to Life. Has criticized his opponent's
+          votes against parental notification requirements for minors seeking abortion, and says he
+          will "fight for parental rights and for life" in Congress (per his campaign's social media
+          statements).
+
+  - issue: "Public Safety & Criminal Justice"
+    cells:
+      - stance: Supports
+        text: >-
+          body cameras, independent investigations of officer-involved shootings, and more federal
+          funding for crime-victim services and the Violence Against Women Act.
+      - stance: Opposes
+        text: >-
+          what he calls a "soft on crime" approach, and supports reviewing "vague federal laws" he says
+          over-criminalize "ordinary Americans." Supports increased funding for police, prosecutors,
+          and border and anti-trafficking enforcement.
+
+  - issue: "Affordable Housing"
+    cells:
+      - stance: Supports
+        text: "building workforce housing that everyday Nevadans can afford."
+      - stance: Abstaining
+
+sources: >-
+  Candidates' official campaign websites (electteresa.com, flippo4nv.com) and social media, matched
+  Questions & Answers published by This Is Reno's 2026 Election Guide, Ballotpedia, and nonpartisan
+  news coverage (The Nevada Independent, Nevada Appeal, Nevada Current). Compiled August 2026;
+  candidate positions may be updated or clarified as the campaign continues.

@@ -7,3 +7,4 @@ vendor/
 .bundle/
 tmp_feedback/
 _data/substack_feed.xml
+tmp/

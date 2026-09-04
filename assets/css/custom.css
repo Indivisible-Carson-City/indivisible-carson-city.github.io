@@ -43,3 +43,24 @@ body {
 .prose strong {
   color: #1f2937;
 }
+
+/* Pull quotes in markdown content (endorsement statement, etc.) */
+.prose blockquote {
+  border-left: 3px solid #00417b;
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.prose blockquote p {
+  font-style: italic;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+/* Attribution line — the last paragraph of a blockquote. */
+.prose blockquote p:last-child {
+  font-style: normal;
+  font-size: 0.9375rem;
+  color: #6b7280;
+  margin-bottom: 0;
+}

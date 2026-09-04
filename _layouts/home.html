@@ -40,6 +40,45 @@ layout: default
   </div>
 </section>
 
+{% assign vote_expired = false %}
+{% if site.data.vote.expires %}
+  {% assign vote_expires_date = site.data.vote.expires | date: "%s" | plus: 86400 %}
+  {% assign now = site.time | date: "%s" | plus: 0 %}
+  {% if now >= vote_expires_date %}{% assign vote_expired = true %}{% endif %}
+{% endif %}
+{% if site.data.vote.enabled and vote_expired == false %}
+{% assign v = site.data.vote %}
+<section class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="font-heading text-3xl font-bold text-center mb-10">{{ v.heading }}</h2>
+    <div class="grid lg:grid-cols-3 gap-6 items-stretch">
+
+      <div class="rounded-3xl text-white p-6 flex flex-col" style="background-color: #1a5c9e;">
+        <h3 class="font-heading text-lg font-bold mb-2">{{ v.endorsement.heading }}</h3>
+        <div class="text-sm text-white/90 leading-relaxed space-y-2 flex-grow">{{ v.endorsement.excerpt | markdownify }}</div>
+        <a href="{{ v.endorsement.link | relative_url }}" class="inline-block mt-4 bg-white text-brand hover:bg-gray-100 no-underline px-4 py-2 rounded-full text-sm font-semibold text-center transition-colors">{{ v.endorsement.link_text }} &rarr;</a>
+      </div>
+
+      {% for card in v.comparisons.cards %}
+      {% assign race = site.data.races[card.race] %}
+      <a href="{{ card.url | relative_url }}" class="group flex flex-col justify-between no-underline rounded-2xl border-2 border-gray-200 hover:border-brand bg-white p-6 shadow-sm hover:shadow-lg transition-all">
+        <div>
+          <h3 class="font-heading text-xl font-bold text-gray-900 leading-tight mb-1">{{ card.title }}</h3>
+          <p class="text-sm text-gray-500 mb-3">{{ card.subtitle }}</p>
+          <p class="text-sm text-gray-600 leading-relaxed">{{ race.blurb }}</p>
+        </div>
+        <span class="mt-5 text-brand group-hover:text-brand-dark font-semibold text-sm transition-colors">Click to view &rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="{{ '/vote/' | relative_url }}" class="text-brand hover:text-brand-dark font-semibold transition-colors">Voter resources &amp; full election info &rarr;</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 {% assign spotlight_expired = false %}
 {% if site.data.spotlight.expires %}
   {% assign spotlight_expires_date = site.data.spotlight.expires | date: "%s" | plus: 86400 %}

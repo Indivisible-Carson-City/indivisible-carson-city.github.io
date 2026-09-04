@@ -1,0 +1,18 @@
+---
+layout: default
+title: Congressional District 2 — Candidate Comparison
+permalink: /vote/cd2/
+description: "Side-by-side comparison of Teresa Benitez-Thompson and David Flippo, the 2026 candidates for Nevada's 2nd Congressional District, on background and 15 issues."
+---
+
+{% assign race = site.data.races.cd2 %}
+
+<div class="max-w-6xl mx-auto px-4 pt-12">
+  <p class="text-sm text-gray-500 mb-2"><a href="{{ '/vote/' | relative_url }}" class="text-brand hover:text-brand-dark">2026 Election</a> &rsaquo; Candidate Comparison</p>
+  <h1 class="font-heading text-4xl md:text-5xl font-bold mb-2">{{ race.title }}</h1>
+  <p class="text-lg text-gray-600">{{ race.race }}</p>
+</div>
+
+<div class="py-8">
+  {% include candidate_comparison.html race=race %}
+</div>
