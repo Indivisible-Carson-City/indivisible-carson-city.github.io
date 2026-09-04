@@ -33,14 +33,14 @@ resources:
           url: "https://registertovote.nv.gov/"
         - text: "Check your voter registration status"
           url: "https://www.nvsos.gov/votersearch/"
-        - text: "Early voting information"
-          url: "https://www.nvsos.gov/sos/elections/voters/early-voting-information"
         - text: "2026 polling places & mail ballot drop boxes"
           url: "https://www.nvsos.gov/elections/election-information/2026-election-information/2026-polling-locations"
     - label: "Carson City"
       links:
         - text: "Elections Department"
           url: "https://www.carsoncity.gov/government/departments-a-f/clerk-recorder/elections-department"
+        - text: "2026 election & early voting information"
+          url: "https://www.carsoncity.gov/government/departments-a-f/clerk-recorder/elections-department/2024-election-information"
     - label: "More candidate comparisons"
       links:
         - text: "Vote411 — nonpartisan candidate guide from the League of Women Voters"
