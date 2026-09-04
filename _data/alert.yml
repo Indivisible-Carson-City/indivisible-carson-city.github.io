@@ -2,11 +2,11 @@
 # To update: change the text and link below. To hide, set enabled: false.
 # expires: date after which the banner auto-hides (YYYY-MM-DD). Remove to show indefinitely.
 #
-# NOTE: this banner is currently hidden — it expired 2026-06-09. To bring it back,
-# change `expires` to a future date (e.g. 2026-11-03, election day).
+# Set to run through election day. The daily 8 AM UTC rebuild will hide it
+# automatically on 2026-11-04.
 
 enabled: true
-expires: 2026-06-09
+expires: 2026-11-03
 text: "Indivisible Carson City endorses Teresa Benitez-Thompson for Congressional District 2."
 link: /vote/
 link_text: "See the candidate comparison"
