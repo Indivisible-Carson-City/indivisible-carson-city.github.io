@@ -91,7 +91,7 @@ layout: default
     <h2 class="font-heading text-3xl font-bold text-center mb-10">{{ site.data.spotlight.heading }}</h2>
     <div class="grid {% if site.data.spotlight.items.size > 1 %}md:grid-cols-2{% endif %} gap-6 justify-items-center">
       {% for item in site.data.spotlight.items %}
-      <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+      <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow{% if site.data.spotlight.items.size == 1 %} max-w-md{% endif %}">
         {% if item.link %}
         <a href="{{ item.link }}" target="_blank" rel="noopener">
           <img src="{{ item.image | relative_url }}" alt="{{ item.alt }}" class="w-full h-auto hover:opacity-90 transition-opacity" loading="lazy">

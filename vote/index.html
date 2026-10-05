@@ -63,6 +63,16 @@ description: "Indivisible Carson City's 2026 endorsement, side-by-side candidate
     </div>
   </section>
 
+  {%- comment -%} Suggested ballot + ballot questions, right under the comparisons. {%- endcomment -%}
+  {% assign b = site.data.ballot %}
+  <section class="mt-12">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-5">
+      <h2 class="font-heading text-2xl font-bold text-brand">{{ b.questions_heading }}</h2>
+      <a href="{{ '/vote/ballot/' | relative_url }}" class="inline-block bg-accent hover:bg-accent-dark text-white no-underline px-5 py-2 rounded-full text-sm font-semibold transition-colors">Printable suggested ballot &rarr;</a>
+    </div>
+    {% include ballot_questions.html %}
+  </section>
+
   {%- comment -%} Voter resources. {%- endcomment -%}
   <section class="mt-12 rounded-2xl border border-brand/15 border-l-4 border-l-accent p-7 md:p-8" style="background-color: #eff5fb;">
     <h2 class="font-heading text-2xl font-bold text-brand mb-6">{{ v.resources.heading }}</h2>

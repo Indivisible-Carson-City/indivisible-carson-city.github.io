@@ -1,0 +1,54 @@
+---
+layout: default
+title: Suggested Ballot
+permalink: /vote/ballot/
+description: "Indivisible Carson City's suggested ballot for the 2026 Nevada general election: candidate suggestions and positions on Questions 6 and 7. Print it and take it to the polls."
+---
+
+{% assign b = site.data.ballot %}
+
+<div class="max-w-4xl mx-auto px-4 py-12 md:py-16 print:py-0 print:px-0">
+  <p class="text-sm text-gray-500 mb-2 print:hidden"><a href="{{ '/vote/' | relative_url }}" class="text-brand hover:text-brand-dark">2026 Election</a> &rsaquo; Suggested Ballot</p>
+
+  <header class="flex flex-wrap items-end justify-between gap-4 mb-6 print:mb-3">
+    <div>
+      <p class="hidden print:block text-sm font-semibold text-brand">Indivisible Carson City &middot; indivisiblecarsoncity.org</p>
+      <h1 class="font-heading text-4xl md:text-5xl font-bold print:text-3xl">{{ b.heading }} &mdash; 2026</h1>
+    </div>
+    <button type="button" onclick="window.print()" class="print:hidden bg-brand hover:bg-brand-dark text-white px-5 py-2 rounded-full text-sm font-semibold transition-colors">Print this ballot</button>
+  </header>
+
+  <p class="text-gray-600 leading-relaxed mb-8 print:mb-4 print:text-sm">{{ b.intro }}</p>
+
+  {%- comment -%} Races: the suggested candidate in each race is marked with a checkmark. {%- endcomment -%}
+  <section class="grid sm:grid-cols-2 gap-4 print:grid-cols-2 print:gap-2">
+    {% for race in b.races %}
+    <div class="rounded-xl border border-gray-200 p-4 print:p-2 break-inside-avoid">
+      <h2 class="font-heading text-lg font-bold text-brand leading-tight mb-2 print:mb-1 print:text-base">
+        {{ race.office }}{% if race.note %} <span class="text-sm font-normal text-gray-500">({{ race.note }})</span>{% endif %}
+      </h2>
+      <ul class="list-none m-0 p-0 space-y-1 print:text-sm">
+        {% for c in race.candidates %}
+        <li class="flex items-center gap-2 {% if c.pick %}font-semibold text-gray-900{% else %}text-gray-600{% endif %}">
+          <span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 {% if c.pick %}border-green-700 bg-green-700 text-white{% else %}border-gray-300{% endif %}" aria-hidden="true">{% if c.pick %}&#10003;{% endif %}</span>
+          <span>{{ c.name }}{% if c.note %} <span class="font-normal text-gray-500">&ndash; {{ c.note }}</span>{% endif %}{% if c.pick %}<span class="sr-only"> (suggested)</span>{% endif %}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </section>
+
+  {%- comment -%} Ballot questions: compact Yes/No list for printing, full explanations on screen. {%- endcomment -%}
+  <section class="mt-10 print:mt-4">
+    <h2 class="font-heading text-2xl font-bold text-brand mb-4 print:text-lg print:mb-2">{{ b.questions_heading }}</h2>
+    <ul class="hidden print:block list-none m-0 p-0 space-y-1 text-sm">
+      {% for q in b.questions %}
+      <li class="font-semibold">{% if q.vote == 'yes' %}&#10003; YES{% else %}&#10007; NO{% endif %} on Question {{ q.number }} &ndash; {{ q.title }}</li>
+      {% endfor %}
+    </ul>
+    <div class="print:hidden">
+      {% include ballot_questions.html %}
+    </div>
+  </section>
+</div>
