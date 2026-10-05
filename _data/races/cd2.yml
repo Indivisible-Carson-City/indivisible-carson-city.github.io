@@ -22,7 +22,9 @@ background:
   - label: Residency
     cells:
       - text: "40-year resident of Reno, NV."
-      - text: "4-month resident of Reno, NV. 12-year resident of Las Vegas, NV."
+      - text: >-
+          Became a resident of Reno in March 2026 when Amodei announced retirement. 12-year resident
+          of Las Vegas, NV.
 
   - label: Career
     cells:
@@ -55,10 +57,10 @@ background:
           CHC BOLD PAC, Teamsters, PLAN Action, NOW National/NOW Nevada, IATSE, Northern Nevada
           Central Labor Council, INVCC.
       - text: >-
-          Trump, Gov. Lombardo (originally backed a different candidate during the primary), Rep. Paul
+          Trump, Gov. Lombardo (originally backed a different candidate during primary), Rep. Paul
           Gosar, Turning Point Action, National Right to Life/Nevada Right to Life, and campaign
-          co-chairs Robin Titus and PK O'Neill. Republicans Cong. Amodei and Sen. Titus have publicly
-          refused to endorse Flippo.
+          co-chairs Robin Titus and PK O'Neill. Republican Cong. Amodei has publicly refused to
+          endorse Flippo.
 
   - label: Financial disclosure
     cells:
