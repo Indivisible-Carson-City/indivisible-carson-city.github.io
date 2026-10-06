@@ -1,0 +1,114 @@
+# Suggested ballot — shown on /vote (ballot questions) and /vote/ballot/ (printable full list).
+# Content from Indivisible Carson City's "INVCC ballot suggestions" document.
+# In each race, mark the suggested candidate with `pick: true`. A race with no pick shows no checkmark.
+# In each question, `vote` is "yes" or "no".
+
+heading: "Suggested Ballot"
+intro: >-
+  We thoughtfully suggest candidates that support the values Indivisible Carson City feels are
+  important. However, we recommend you research the candidates independently to ensure they also align
+  with your values. We hope you find our suggestions useful.
+
+races:
+  - office: "Governor"
+    candidates:
+      - name: "Joe Lombardo (R)"
+        note: incumbent
+      - name: "Aaron Ford (D)"
+        pick: true
+  - office: "Secretary of State"
+    candidates:
+      - name: "Cisco Aguilar (D)"
+        note: incumbent
+        pick: true
+      - name: "Jim Marchant (R)"
+  - office: "Congressional District 2"
+    candidates:
+      - name: "Teresa Benitez-Thompson (D)"
+        pick: true
+      - name: "David Flippo (R)"
+  - office: "State Senate District 16"
+    candidates:
+      - name: "Lisa Krasner (R)"
+        note: incumbent
+      - name: "Crystal Roll (D)"
+        pick: true
+  - office: "State Assembly District 40"
+    candidates:
+      - name: "Julie Butler (R)"
+      - name: "Oscar Fuentes (D)"
+        pick: true
+  - office: "Nevada State Treasurer"
+    candidates:
+      - name: "Tya Mathis-Coleman (D)"
+        pick: true
+      - name: "Drew Johnson (R)"
+  - office: "Nevada State Attorney General"
+    candidates:
+      - name: "Nicole Cannizzaro (D)"
+        pick: true
+      - name: "Andriana Guzman Fralick (R)"
+  - office: "Nevada Lieutenant Governor"
+    candidates:
+      - name: "Stavros Anthony (R)"
+        note: incumbent
+      - name: "Sandra Jauregui (D)"
+        pick: true
+  - office: "Nevada State Controller"
+    candidates:
+      - name: "Andy Matthews (R)"
+        note: incumbent
+      - name: "Michael MacDougall (D)"
+  - office: "Carson City Supervisor, Ward 3"
+    note: nonpartisan
+    candidates:
+      - name: "Curtis Horton"
+        note: incumbent
+      - name: "Mayita Sanchez"
+        pick: true
+
+questions_heading: "Ballot Questions"
+questions:
+  - number: 6
+    title: "Right to Abortion Initiative"
+    vote: "yes"
+    paragraphs:
+      - >-
+        Question 6 seeks to make NRS 442.250, Nevada's voter-approved abortion protections, a
+        constitutional amendment, preventing future legislatures from weakening or repealing them. It
+        also affirms that abortion access applies to anyone receiving care in Nevada, including
+        non-residents.
+      - >-
+        The measure modernizes the statute by allowing qualified medical professionals, acting within
+        their scope of practice, to provide abortion care.
+      - >-
+        Additional provisions in NRS regulations address Informed Consent, Additional Informed Consent
+        standards, Parental notification for minors and Reporting, Recordkeeping and medical standards.
+        These would remain fully intact and are not changed by Question 6.
+  - number: 7
+    title: "Require Voter Identification Initiative"
+    vote: "no"
+    paragraphs:
+      - >-
+        An amendment to the Nevada Constitution that would require photo identification to be required
+        when voting in person, or for the addition of either the last 4 digits of their Nevada Driver's
+        License number or their Social Security card or their Voter Registration number.
+      - >-
+        Nevada currently uses a system of matching a voter's signature completed at the polls when
+        providing their name, address and signing attesting that they are aware it is illegal and
+        subject to steep fines for voting more than once to an electronic copy of their signature
+        obtained through DMV &/or Voter Registration files. Other electronic copies may be utilized
+        if needed. Forensic handwriting research has shown that signatures contain highly identifiable
+        features and that human examiners (the election workers) are highly accurate at distinguishing
+        genuine signatures from forgeries. Studies have been done by the National Institute of Standards
+        & Technology (NIST), MIT's Election Administration Research group and the Brennan Center for
+        Justice - Signature Verification Analysis. In each case, Nevada's system of signature
+        verification as well as its system for "curing" (making right) ballots are validated.
+      - >-
+        Currently there is no evidence to show that the Signature Verification in NV is faulty. There
+        are no instructions or guidance in this Constitutional Amendment for Election Officials to use
+        on how to utilize photo identification. Additionally, studies from NIST have shown that facial
+        appearance changes enough over 2-5 years to reduce accuracy, especially for those over the age
+        of 40. Psychology studies done by the Univ of Aberdeen have shown that "people correctly matched
+        unfamiliar faces to ID photos only 70-80% of the time". Together, TSA and DMV data show that
+        driver's-license photos are not a stable long-term identifier, and mismatches are common.

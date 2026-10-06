@@ -64,3 +64,9 @@ body {
   color: #6b7280;
   margin-bottom: 0;
 }
+
+/* Printing (the /vote/ballot/ page): drop site chrome and keep colour fills. */
+@media print {
+  nav, footer { display: none !important; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
