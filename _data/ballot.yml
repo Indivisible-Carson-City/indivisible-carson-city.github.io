@@ -54,11 +54,6 @@ races:
         note: incumbent
       - name: "Sandra Jauregui (D)"
         pick: true
-  - office: "Nevada State Controller"
-    candidates:
-      - name: "Andy Matthews (R)"
-        note: incumbent
-      - name: "Michael MacDougall (D)"
   - office: "Carson City Supervisor, Ward 3"
     note: nonpartisan
     candidates:
@@ -66,6 +61,18 @@ races:
         note: incumbent
       - name: "Mayita Sanchez"
         pick: true
+  - office: "School Board District 1"
+    note: nonpartisan
+    candidates:
+      - name: "Adam Heinz"
+      - name: "Maria \"Lupe\" Ramirez"
+        pick: true
+  - office: "District Attorney"
+    note: nonpartisan
+    candidates:
+      - name: "David Bailey"
+        pick: true
+      - name: "Brandon Kelly"
 
 questions_heading: "Ballot Questions"
 questions:
